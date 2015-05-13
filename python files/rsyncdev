@@ -24,75 +24,75 @@ case $version_to_get in
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_KDE"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE.iso.pkglist .
         ;;
     2)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_KDE-dev"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE-dev.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE-dev.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.pkglist .
         ;;
     3)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_GNOME"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME.iso.pkglist .
         ;;
     4)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_GNOME-dev"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.pkglist .
         ;;
     5)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_MATE"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE.iso.pkglist .
         ;;
     6)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_MATE-dev"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE-dev.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE-dev.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.pkglist .
         ;;
     7)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_Xfce"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce.iso.pkglist .
         ;;
     8)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_Xfce-dev"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglist .
         ;;
        
       9)
                 echo "Here we go!"
                 sleep 1
         echo "Getting Sabayon_Linux_DAILY_amd64_ForensicsXFCE"
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5 .
-                rsync -av rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5 .
+                rsync -av --progress rsync://$MIRROR_URL/sabayonlinux/iso/daily/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist .
         ;;
     *)
-        echo "Invalid choice, you suck."
+        echo "Invalid choice, try again."
 esac
