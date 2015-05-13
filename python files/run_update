@@ -37,6 +37,11 @@ print bcolors.BOLD + "====Updating the Repositories====" + bcolors.ENDC
 equo_update = subprocess.Popen('equo update', shell=True)
 retval = equo_update.wait()
 
+#Syncing license.accept so we don't get prompted for license agreement
+print bcolors.BOLD + "====Updating license.accept file to avoid prompts====" + bcolors.ENDC
+rsync = subprocess.Popen('rsync -av -H -A -X --delete-during "rsync://rsync.at.gentoo.org/gentoo-portage/licenses/" "/usr/portage/licenses/"; ls /usr/portage/licenses -1 | xargs -0 > /etc/entropy/packages/license.accept', shell=True)
+retval = rsync.wait()
+
 # Next we need to make sure latest entropy is installed
 print bcolors.BOLD + "====Installing Latest Entropy====" + bcolors.ENDC
 equo_entropy = subprocess.Popen('equo install app-admin/equo sys-apps/entropy --nodeps', shell=True)
