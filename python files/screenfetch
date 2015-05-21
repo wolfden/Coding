@@ -731,8 +731,7 @@ detectpkgs () {
 		'Frugalware') pkgs=$(pacman-g2 -Q | wc -l) ;;
 		'Fuduntu'|'Ubuntu'|'Mint'|'SolusOS'|'Debian'|'Raspbian'|'LMDE'|'CrunchBang'|'Peppermint'|'LinuxDeepin'|'Deepin'|'Kali Linux'|'Trisquel'|'elementary OS') pkgs=$(dpkg --get-selections | wc -l) ;;
 		'Slackware') pkgs=$(ls -1 /var/log/packages | wc -l) ;;
-		'Gentoo'|'Funtoo') pkgs=$(ls -d /var/db/pkg/*/* | wc -l) ;;
-		'sabayon') pkgs=$(ls -l /usr/bin | wc -l) ;;
+		'Gentoo'|'Funtoo'|'sabayon') pkgs=$(ls -d /var/db/pkg/*/* | wc -l) ;;
 		'Fedora'|'Korora'|'openSUSE'|'Red Hat Enterprise Linux'|'CentOS'|'Mandriva'|'Mandrake'|'Mageia'|'Viperr') pkgs=$(rpm -qa | wc -l) ;;
 		'Void') pkgs=$(xbps-query -l|wc -l);;
 		'Evolve OS') pkgs=$(pisi list-installed | wc -l);;
