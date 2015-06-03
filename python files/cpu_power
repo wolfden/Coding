@@ -7,12 +7,12 @@
 import subprocess
 import time
 import sys
-import os
 
+#Notice to run as root or changes will fail
+print "\nScript for cpupower. To Makes Changes Must Be Root\n"   
 
-print "\nScript for cpupower. Run as root\n"   #notice
-
-ans=True									   #time for a menu
+#time for the menu
+ans=True									   
 while ans:
 	print ("""
 	0.Install cpupower via entropy
