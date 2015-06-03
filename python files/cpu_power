@@ -7,6 +7,8 @@
 import subprocess
 import time
 import sys
+import os
+
 
 print "\nScript for cpupower. Run as root\n"   #notice
 
@@ -24,7 +26,8 @@ while ans:
 	8.Enable cpupower.service - Adds cpupower to boot up
 	9.Start cpupower.service - Starts cpupower service
 	10.Monitor CPU - Live view of CPUs, Ctrl + c to end
-	11.Exit
+	11.Edit the config file - set governor on boot
+	12.Exit
 """)
 	ans=raw_input("Enter Number From Above:")
 
@@ -82,6 +85,10 @@ while ans:
 		time.sleep(2)
 		monitor = subprocess.Popen('watch grep \"cpu MHz\" /proc/cpuinfo', shell=True)
 	elif ans=="11":
+		print "Opening file now..	"
+		p = subprocess.Popen('nano /etc/sysconfig/cpupower', shell=True)
+		returncode = p.wait()	
+	elif ans=="12":
 		sys.exit()
 	elif ans !="":
 		print "Unknown Option"
