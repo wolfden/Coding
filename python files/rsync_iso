@@ -1,0 +1,163 @@
+#!/usr/bin/python
+
+     #converted Joost's bash script to python by wolfden
+     #script for rsyncing iso files
+     #Edit the mirror and isosource to your liking
+     #version 15.06 stable releases
+
+import subprocess
+import time
+import sys
+import os
+
+#change daily mirror url to your favorite mirror
+mirror = "rsync://ftp.SURFnet.nl"
+mpath = "/sabayonlinux/iso/daily/"
+#change monthly mirror url to your favorite mirror
+smirror = "rsync://ftp.SURFnet.nl"
+smpath = "/sabayonlinux/iso/monthly/"
+#edit line below where you want iso's stored
+#isosource = '~/.'   #uncomment for home directory
+isosource = '~/Dev'  #specify location
+
+#Daily ISO images
+dkde = "/Sabayon_Linux_DAILY_amd64_KDE.iso"
+dgnome = "/Sabayon_Linux_DAILY_amd64_GNOME.iso"
+dmate = "/Sabayon_Linux_DAILY_amd64_MATE.iso"
+dxfce = "/Sabayon_Linux_DAILY_amd64_Xfce.iso"
+dminimal = "/Sabayon_Linux_DAILY_amd64_Minimal.iso"
+dspinbase = "/Sabayon_Linux_DAILY_amd64_SpinBase.iso"
+dforensics = "/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso"
+sourcedkde = '.'.join(str(x) for x in (mirror, mpath, dkde))
+sourcedgnome = '.'.join(str(x) for x in (mirror, mpath, dgnome))
+sourcedmate = '.'.join(str(x) for x in (mirror, mpath, dmate))
+sourcedxfce = '.'.join(str(x) for x in (mirror, mpath, dxfce))
+sourcedminimal = '.'.join(str(x) for x in (mirror, mpath, dminimal))
+sourcedspinbase = '.'.join(str(x) for x in (mirror, mpath, dspinbase))
+sourcedforensics = '.'.join(str(x) for x in (mirror, mpath, dforensics))
+
+#Dev ISO images
+dvkde = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso"
+dvgnome = "/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso"
+dvmate = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso"
+dvxfce = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso"
+dvminimal = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso"
+dvspinbase = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso"
+sourcedvkde = '.'.join(str(x) for x in (mirror, mpath, dvkde))
+sourcedvgnome = '.'.join(str(x) for x in (mirror, mpath, dvgnome))
+sourcedvmate = '.'.join(str(x) for x in (mirror, mpath, dvmate))
+sourcedvxfce = '.'.join(str(x) for x in (mirror, mpath, dvxfce))
+sourcedvminimal = '.'.join(str(x) for x in (mirror, mpath, dvminimal))
+sourcedvspinbase = '.'.join(str(x) for x in (mirror, mpath, dvspinbase))
+
+#Stable ISOs - edit version number to current one, otherwise it will fail
+skde = "/Sabayon_Linux_15.06_amd64_KDE.iso"
+sgnome = "/Sabayon_Linux_15.06_amd64_GNOME.iso"
+smate = "/Sabayon_Linux_15.06_amd64_MATE.iso"
+sxfce = "/Sabayon_Linux_15.06_amd64_Xfce.iso"
+sminimal = "/Sabayon_Linux_15.06_amd64_Minimal.iso"
+sspinbase = "/Sabayon_Linux_15.06_amd64_SpinBase.iso"
+sourceskde = '.'.join(str(x) for x in (smirror, smpath, skde))
+sourcesgnome = '.'.join(str(x) for x in (smirror, smpath, sgnome))
+sourcesmate = '.'.join(str(x) for x in (smirror, smpath, smate))
+sourcesxfce = '.'.join(str(x) for x in (smirror, smpath, sxfce))
+sourcesminimal = '.'.join(str(x) for x in (smirror, smpath, sminimal))
+sourcesspinbase = '.'.join(str(x) for x in (smirror, smpath, sspinbase))
+
+print "\nWelcome to the Sabayon Linux(tm) Syncmaster scripty!\n"   
+
+print "\nEnter Your Choice Below\n"
+	#Menu with choice, user will enter a number for desire choice
+ans=True									   
+while ans:
+	print ("""
+	0.Sabayon_Linux_DAILY_amd64_KDE
+	1.Sabayon_Linux_DAILY_amd64_GNOME
+	2.Sabayon_Linux_DAILY_amd64_MATE
+	3.Sabayon_Linux_DAILY_amd64_Xfce
+	4.Sabayon_Linux_DAILY_amd64_Minimal 
+	5.Sabayon_Linux_DAILY_amd64_SpinBase
+
+	6.Sabayon_Linux_DAILY_amd64_KDE-dev
+	7.Sabayon_Linux_DAILY_amd64_GNOME-dev
+	8.Sabayon_Linux_DAILY_amd64_MATE-dev
+	9.Sabayon_Linux_DAILY_amd64_Xfce-dev
+	10.Sabayon_Linux_DAILY_amd64_Minimal-dev 
+	11.Sabayon_Linux_DAILY_amd64_SpinBase-dev
+
+	12.Sabayon_Linux_amd64_KDE
+	13.Sabayon_Linux_amd64_GNOME
+	14.Sabayon_Linux_amd64_MATE
+	15.Sabayon_Linux_amd64_Xfce
+	16.Sabayon_Linux_amd64_Minimal 
+	17.Sabayon_Linux_amd64_SpinBase
+	
+	18.Sabayon_Linux_amd64_ForensicsXfce
+	
+	19.Exit
+""")
+
+	ans=raw_input("Enter Number From Above:")
+
+	if ans=="0":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedkde} isosource'.format(sourcedkde=sourcedkde))
+	elif ans=="1":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedgnome} isosource'.format(sourcedgnome=sourcedgnome))
+	elif ans=="2":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedmate} isosource'.format(sourcedmate=sourcedmate))
+	elif ans=="3":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedxfce} isosource'.format(sourcedxfce=sourcedxfce))
+	elif ans=="4":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedminimal} isosource'.format(sourcedminimal=sourcedminimal))
+	elif ans=="5":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedspinbase} isosource'.format(sourcedspinbase=sourcedspinbase))
+	elif ans=="6":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedvkde} isosource'.format(sourcedvkde=sourcedvkde))
+	elif ans=="7":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedvgnome} isosource'.format(sourcedvgnome=sourcedvgnome))
+	elif ans=="8":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedvmate} isosource'.format(sourcedvmate=sourcedvmate))
+	elif ans=="9":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedvxfce} isosource'.format(sourcedvxfce=sourcedvxfce))
+	elif ans=="10":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedvminimal} isosource'.format(sourcedvminimal=sourcedvminimal))
+	elif ans=="11":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedvspinbase} isosource'.format(sourcedvspinbase=sourcedvspinbase))
+	elif ans=="12":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourceskde} isosource'.format(sourceskde=sourceskde))
+	elif ans=="13":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcesgnome} isosource'.format(sourcedgnome=sourcesgnome))
+	elif ans=="14":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcesmate} isosource'.format(sourcesmate=sourcesmate))
+	elif ans=="15":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcesxfce} isosource'.format(sourcesxfce=sourcesxfce))
+	elif ans=="16":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcesminimal} isosource'.format(sourcesminimal=sourcesminimal))
+	elif ans=="17":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcesspinbase} isosource'.format(sourcesspinbase=sourcesspinbase))
+	elif ans=="18":
+		print "Starting rsync ..."
+		print os.system('rsync -zvr --progress {sourcedforensics} isosource'.format(sourcedforensics=sourcedforensics))
+	elif ans=="19":
+		sys.exit()
+	elif ans !="":
+		print "Unknown Option"
+
