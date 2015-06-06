@@ -18,7 +18,7 @@ smirror = "rsync://ftp.SURFnet.nl"
 smpath = "/sabayonlinux/iso/monthly/"
 #edit line below where you want iso's stored
 #isosource = '~/.'   #uncomment for home directory
-isosource = '~/Dev'  #specify location
+#isosource = '~/./Dev/'  #specify location
 
 #Daily ISO images
 dkde = "/Sabayon_Linux_DAILY_amd64_KDE.iso"
@@ -64,7 +64,7 @@ sourcesxfce = '.'.join(str(x) for x in (smirror, smpath, sxfce))
 sourcesminimal = '.'.join(str(x) for x in (smirror, smpath, sminimal))
 sourcesspinbase = '.'.join(str(x) for x in (smirror, smpath, sspinbase))
 
-print "\nWelcome to the Sabayon Linux(tm) Syncmaster scripty!\n"   
+print "\nWelcome to the Sabayon Linux(tm) Syncmaster!\n"   
 
 print "\nEnter Your Choice Below\n"
 	#Menu with choice, user will enter a number for desire choice
@@ -101,61 +101,61 @@ while ans:
 
 	if ans=="0":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedkde} isosource'.format(sourcedkde=sourcedkde))
+		print os.system('rsync -zvr --progress {sourcedkde} Sabayon_Linux_DAILY_amd64_KDE.iso'.format(sourcedkde=sourcedkde))
 	elif ans=="1":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedgnome} isosource'.format(sourcedgnome=sourcedgnome))
+		print os.system('rsync -zvr --progress {sourcedgnome} Sabayon_Linux_DAILY_amd64_Minimal-GNOME.iso'.format(sourcedgnome=sourcedgnome))
 	elif ans=="2":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedmate} isosource'.format(sourcedmate=sourcedmate))
+		print os.system('rsync -zvr --progress {sourcedmate} Sabayon_Linux_DAILY_amd64_MATE.iso'.format(sourcedmate=sourcedmate))
 	elif ans=="3":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedxfce} isosource'.format(sourcedxfce=sourcedxfce))
+		print os.system('rsync -zvr --progress {sourcedxfce} Sabayon_Linux_DAILY_amd64_Xfce.iso'.format(sourcedxfce=sourcedxfce))
 	elif ans=="4":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedminimal} isosource'.format(sourcedminimal=sourcedminimal))
+		print os.system('rsync -zvr --progress {sourcedminimal} Sabayon_Linux_DAILY_amd64_Minimal.iso'.format(sourcedminimal=sourcedminimal))
 	elif ans=="5":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedspinbase} isosource'.format(sourcedspinbase=sourcedspinbase))
+		print os.system('rsync -zvr --progress {sourcedspinbase} Sabayon_Linux_DAILY_amd64_SpinBase.iso'.format(sourcedspinbase=sourcedspinbase))
 	elif ans=="6":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedvkde} isosource'.format(sourcedvkde=sourcedvkde))
+		print os.system('rsync -zvr --progress {sourcedvkde} Sabayon_Linux_DAILY_amd64_KDE-dev.iso'.format(sourcedvkde=sourcedvkde))
 	elif ans=="7":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedvgnome} isosource'.format(sourcedvgnome=sourcedvgnome))
+		print os.system('rsync -zvr --progress {sourcedvgnome} Sabayon_Linux_DAILY_amd64_GNOME-dev.iso'.format(sourcedvgnome=sourcedvgnome))
 	elif ans=="8":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedvmate} isosource'.format(sourcedvmate=sourcedvmate))
+		print os.system('rsync -zvr --progress {sourcedvmate} Sabayon_Linux_DAILY_amd64_MATE-dev.iso'.format(sourcedvmate=sourcedvmate))
 	elif ans=="9":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedvxfce} isosource'.format(sourcedvxfce=sourcedvxfce))
+		print os.system('rsync -zvr --progress {sourcedvxfce} Sabayon_Linux_DAILY_amd64_Xfce-dev.iso'.format(sourcedvxfce=sourcedvxfce))
 	elif ans=="10":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedvminimal} isosource'.format(sourcedvminimal=sourcedvminimal))
+		print os.system('rsync -zvr --progress {sourcedvminimal} Sabayon_Linux_DAILY_amd64_Minimal-dev.iso'.format(sourcedvminimal=sourcedvminimal))
 	elif ans=="11":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedvspinbase} isosource'.format(sourcedvspinbase=sourcedvspinbase))
+		print os.system('rsync --progress {sourcedvspinbase} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso'.format(sourcedvspinbase=sourcedvspinbase))
 	elif ans=="12":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourceskde} isosource'.format(sourceskde=sourceskde))
+		print os.system('rsync -zvr --progress {sourceskde} Sabayon_Linux_15.06_amd64_KDE.iso'.format(sourceskde=sourceskde))
 	elif ans=="13":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcesgnome} isosource'.format(sourcedgnome=sourcesgnome))
+		print os.system('rsync -zvr --progress {sourcesgnome} Sabayon_Linux_15.06_amd64_GNOME.iso'.format(sourcedgnome=sourcesgnome))
 	elif ans=="14":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcesmate} isosource'.format(sourcesmate=sourcesmate))
+		print os.system('rsync -zvr --progress {sourcesmate} Sabayon_Linux_15.06_amd64_MATE.iso'.format(sourcesmate=sourcesmate))
 	elif ans=="15":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcesxfce} isosource'.format(sourcesxfce=sourcesxfce))
+		print os.system('rsync -zvr --progress {sourcesxfce} Sabayon_Linux_15.06_amd64_Xfce.iso'.format(sourcesxfce=sourcesxfce))
 	elif ans=="16":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcesminimal} isosource'.format(sourcesminimal=sourcesminimal))
+		print os.system('rsync -zvr --progress {sourcesminimal} Sabayon_Linux_15.06_amd64_Minimal.iso'.format(sourcesminimal=sourcesminimal))
 	elif ans=="17":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcesspinbase} isosource'.format(sourcesspinbase=sourcesspinbase))
+		print os.system('rsync -zvr --progress {sourcesspinbase} Sabayon_Linux_15.06_amd64_SpinBase.iso'.format(sourcesspinbase=sourcesspinbase))
 	elif ans=="18":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedforensics} isosource'.format(sourcedforensics=sourcedforensics))
+		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso'.format(sourcedforensics=sourcedforensics))
 	elif ans=="19":
 		sys.exit()
 	elif ans !="":
