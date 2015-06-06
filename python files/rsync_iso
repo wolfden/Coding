@@ -2,7 +2,7 @@
 
      #converted Joost's bash script to python by wolfden
      #script for rsyncing iso files
-     #Edit the mirror and isosource to your liking
+     #Edit the mirror to your liking
      #version 15.06 stable releases
 
 import subprocess
