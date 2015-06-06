@@ -16,9 +16,6 @@ mpath = "/sabayonlinux/iso/daily/"
 #change monthly mirror url to your favorite mirror
 smirror = "rsync://ftp.SURFnet.nl"
 smpath = "/sabayonlinux/iso/monthly/"
-#edit line below where you want iso's stored
-#isosource = '~/.'   #uncomment for home directory
-#isosource = '~/./Dev/'  #specify location
 
 #Daily ISO images
 dkde = "/Sabayon_Linux_DAILY_amd64_KDE.iso"
@@ -67,7 +64,7 @@ sourcesspinbase = '.'.join(str(x) for x in (smirror, smpath, sspinbase))
 print "\nWelcome to the Sabayon Linux(tm) Syncmaster!\n"   
 
 print "\nEnter Your Choice Below\n"
-	#Menu with choice, user will enter a number for desire choice
+#Menu with choice, user will enter a number for desire choice
 ans=True									   
 while ans:
 	print ("""
@@ -96,7 +93,7 @@ while ans:
 	
 	19.Exit
 """)
-
+#All the rsync stuffs via menu selection
 	ans=raw_input("Enter Number From Above:")
 
 	if ans=="0":
