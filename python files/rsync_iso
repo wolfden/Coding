@@ -13,6 +13,7 @@ import os
 #change daily mirror url to your favorite mirror
 mirror = "rsync://ftp.SURFnet.nl"
 mpath = "/sabayonlinux/iso/daily/"
+
 #change monthly mirror url to your favorite mirror
 smirror = "rsync://ftp.SURFnet.nl"
 smpath = "/sabayonlinux/iso/monthly/"
@@ -30,8 +31,40 @@ sourcedgnome = '.'.join(str(x) for x in (mirror, mpath, dgnome))
 sourcedmate = '.'.join(str(x) for x in (mirror, mpath, dmate))
 sourcedxfce = '.'.join(str(x) for x in (mirror, mpath, dxfce))
 sourcedminimal = '.'.join(str(x) for x in (mirror, mpath, dminimal))
-sourcedspinbase = '.'.join(str(x) for x in (mirror, mpath, dspinbase))
+sourcedspinbase = '.'.join(str(x) for x   in (mirror, mpath, dspinbase))
 sourcedforensics = '.'.join(str(x) for x in (mirror, mpath, dforensics))
+
+#Daily ISO md5
+dkdemd5 = "/Sabayon_Linux_DAILY_amd64_KDE.iso.md5"
+dgnomemd5 = "/Sabayon_Linux_DAILY_amd64_GNOME.iso.md5"
+dmatemd5 = "/Sabayon_Linux_DAILY_amd64_MATE.iso.md5"
+dxfcemd5 = "/Sabayon_Linux_DAILY_amd64_Xfce.iso.md5"
+dminimalmd5 = "/Sabayon_Linux_DAILY_amd64_Minimal.iso.md5"
+dspinbasemd5 = "/Sabayon_Linux_DAILY_amd64_SpinBase.iso.md5"
+dforensicsmd5 = "/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5"
+sourcedkdemd5 = '.'.join(str(x) for x in (mirror, mpath, dkdemd5))
+sourcedgnomemd5 = '.'.join(str(x) for x in (mirror, mpath, dgnomemd5))
+sourcedmatemd5 = '.'.join(str(x) for x in (mirror, mpath, dmatemd5))
+sourcedxfcemd5 = '.'.join(str(x) for x in (mirror, mpath, dxfcemd5))
+sourcedminimalmd5 = '.'.join(str(x) for x in (mirror, mpath, dminimalmd5))
+sourcedspinbasemd5 = '.'.join(str(x) for x   in (mirror, mpath, dspinbasemd5))
+sourcedforensicsmd5 = '.'.join(str(x) for x in (mirror, mpath, dforensicsmd5))
+
+#Daily ISO pkglist
+dkdelst = "/Sabayon_Linux_DAILY_amd64_KDE.iso.pkglist"
+dgnomelst = "/Sabayon_Linux_DAILY_amd64_GNOME.iso.pkglist"
+dmatelst = "/Sabayon_Linux_DAILY_amd64_MATE.iso.pkglist"
+dxfcelst = "/Sabayon_Linux_DAILY_amd64_Xfce.iso.pkglist"
+dminimallst = "/Sabayon_Linux_DAILY_amd64_Minimal.iso.pkglist"
+dspinbaselst = "/Sabayon_Linux_DAILY_amd64_SpinBase.iso.pkglist"
+dforensicslst = "/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist"
+sourcedkdelst = '.'.join(str(x) for x in (mirror, mpath, dkdelst))
+sourcedgnomelst = '.'.join(str(x) for x in (mirror, mpath, dgnomelst))
+sourcedmatelst = '.'.join(str(x) for x in (mirror, mpath, dmatelst))
+sourcedxfcelst = '.'.join(str(x) for x in (mirror, mpath, dxfcelst))
+sourcedminimallst = '.'.join(str(x) for x in (mirror, mpath, dminimallst))
+sourcedspinbaselst = '.'.join(str(x) for x   in (mirror, mpath, dspinbaselst))
+sourcedforensicslst = '.'.join(str(x) for x in (mirror, mpath, dforensicslst))
 
 #Dev ISO images
 dvkde = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso"
@@ -47,6 +80,34 @@ sourcedvxfce = '.'.join(str(x) for x in (mirror, mpath, dvxfce))
 sourcedvminimal = '.'.join(str(x) for x in (mirror, mpath, dvminimal))
 sourcedvspinbase = '.'.join(str(x) for x in (mirror, mpath, dvspinbase))
 
+#Dev md5
+dvkdemd5 = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.md5"
+dvgnomemd5 = "/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.md5"
+dvmatemd5 = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.md5"
+dvxfcemd5 = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.md5"
+dvminimalmd5 = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.md5"
+dvspinbasemd5 = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.md5"
+sourcedvkdemd5 = '.'.join(str(x) for x in (mirror, mpath, dvkdemd5))
+sourcedvgnomemd5 = '.'.join(str(x) for x in (mirror, mpath, dvgnomemd5))
+sourcedvmatemd5 = '.'.join(str(x) for x in (mirror, mpath, dvmatemd5))
+sourcedvxfcemd5 = '.'.join(str(x) for x in (mirror, mpath, dvxfcemd5))
+sourcedvminimalmd5 = '.'.join(str(x) for x in (mirror, mpath, dvminimalmd5))
+sourcedvspinbasemd5 = '.'.join(str(x) for x in (mirror, mpath, dvspinbasemd5))
+
+#Dev pkglist
+dvkdelst = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.pkglist"
+dvgnomelst = "/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.pkglist"
+dvmatelst = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.pkglist"
+dvxfcelst = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglst"
+dvminimallst = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.pkglst"
+dvspinbaselst = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglst"
+sourcedvkdelst = '.'.join(str(x) for x in (mirror, mpath, dvkdelst))
+sourcedvgnomelst = '.'.join(str(x) for x in (mirror, mpath, dvgnomelst))
+sourcedvmatelst = '.'.join(str(x) for x in (mirror, mpath, dvmatelst))
+sourcedvxfcelst = '.'.join(str(x) for x in (mirror, mpath, dvxfcelst))
+sourcedvminimallst = '.'.join(str(x) for x in (mirror, mpath, dvminimallst))
+sourcedvspinbaselst = '.'.join(str(x) for x in (mirror, mpath, dvspinbaselst))
+
 #Stable ISOs - edit version number to current one, otherwise it will fail
 skde = "/Sabayon_Linux_15.06_amd64_KDE.iso"
 sgnome = "/Sabayon_Linux_15.06_amd64_GNOME.iso"
@@ -61,9 +122,37 @@ sourcesxfce = '.'.join(str(x) for x in (smirror, smpath, sxfce))
 sourcesminimal = '.'.join(str(x) for x in (smirror, smpath, sminimal))
 sourcesspinbase = '.'.join(str(x) for x in (smirror, smpath, sspinbase))
 
-print "\nWelcome to the Sabayon Linux(tm) Syncmaster!\n"   
+#Stable md5 - edit version number to current one, otherwise it will fail
+skdemd5 = "/Sabayon_Linux_15.06_amd64_KDE.iso.md5"
+sgnomemd5 = "/Sabayon_Linux_15.06_amd64_GNOME.iso.md5"
+smatemd5 = "/Sabayon_Linux_15.06_amd64_MATE.iso.md5"
+sxfcemd5 = "/Sabayon_Linux_15.06_amd64_Xfce.iso.md5"
+sminimalmd5 = "/Sabayon_Linux_15.06_amd64_Minimal.iso.md5"
+sspinbasemd5 = "/Sabayon_Linux_15.06_amd64_SpinBase.iso.md5"
+sourceskdemd5 = '.'.join(str(x) for x in (smirror, smpath, skdemd5))
+sourcesgnomemd5 = '.'.join(str(x) for x in (smirror, smpath, sgnomemd5))
+sourcesmatemd5 = '.'.join(str(x) for x in (smirror, smpath, smatemd5))
+sourcesxfcemd5 = '.'.join(str(x) for x in (smirror, smpath, sxfcemd5))
+sourcesminimalmd5 = '.'.join(str(x) for x in (smirror, smpath, sminimalmd5))
+sourcesspinbasemd5 = '.'.join(str(x) for x in (smirror, smpath, sspinbasemd5))
 
-print "\nEnter Your Choice Below\n"
+#Stable pkglist - edit version number to current one, otherwise it will fail
+skdelst = "/Sabayon_Linux_15.06_amd64_KDE.iso.pkglist"
+sgnomelst = "/Sabayon_Linux_15.06_amd64_GNOME.iso.pkglist"
+smatelst = "/Sabayon_Linux_15.06_amd64_MATE.iso.pkglist"
+sxfcelst = "/Sabayon_Linux_15.06_amd64_Xfce.iso.pkglist"
+sminimallst = "/Sabayon_Linux_15.06_amd64_Minimal.iso.pkglist"
+sspinbaselst = "/Sabayon_Linux_15.06_amd64_SpinBase.iso.pkglist"
+sourceskdelst = '.'.join(str(x) for x in (smirror, smpath, skdelst))
+sourcesgnomelst = '.'.join(str(x) for x in (smirror, smpath, sgnomelst))
+sourcesmatelst = '.'.join(str(x) for x in (smirror, smpath, smatelst))
+sourcesxfcelst = '.'.join(str(x) for x in (smirror, smpath, sxfcelst))
+sourcesminimallst = '.'.join(str(x) for x in (smirror, smpath, sminimallst))
+sourcesspinbaselst = '.'.join(str(x) for x in (smirror, smpath, sspinbaselst))
+
+print "\nWelcome to the Sabayon Linux(tm) Syncmaster!"   
+
+print "\nEnter Your Choice Below"
 #Menu with choice, user will enter a number for desire choice
 ans=True									   
 while ans:
@@ -99,60 +188,117 @@ while ans:
 	if ans=="0":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedkde} Sabayon_Linux_DAILY_amd64_KDE.iso'.format(sourcedkde=sourcedkde))
+		print os.system('rsync -zvr --progress {sourcedkdemd5} Sabayon_Linux_DAILY_amd64_KDE.iso.md5'.format(sourcedkdemd5=sourcedkdemd5))
+		print os.system('rsync -zvr --progress {sourcedkdelst} Sabayon_Linux_DAILY_amd64_KDE.iso.pkglist'.format(sourcedkdelist=sourcedkdelist))
+		print "rsync complete"
 	elif ans=="1":
 		print "Starting rsync ..."
-		print os.system('rsync -zvr --progress {sourcedgnome} Sabayon_Linux_DAILY_amd64_Minimal-GNOME.iso'.format(sourcedgnome=sourcedgnome))
+		print os.system('rsync -zvr --progress {sourcedgnome} Sabayon_Linux_DAILY_amd64_Minimal.iso'.format(sourcedgnome=sourcedgnome))
+		print os.system('rsync -zvr --progress {sourcedgnomemd5} Sabayon_Linux_DAILY_amd64_GNOME.iso.md5'.format(sourcedgnomemd5=sourcedgnomemd5))
+		print os.system('rsync -zvr --progress {sourcedgnomelst} Sabayon_Linux_DAILY_amd64_GNOME.iso.pkglist'.format(sourcedgnomelst=sourcedgnomelst))
+		print "rsync complete"
 	elif ans=="2":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedmate} Sabayon_Linux_DAILY_amd64_MATE.iso'.format(sourcedmate=sourcedmate))
+		print os.system('rsync -zvr --progress {sourcedmatemd5} Sabayon_Linux_DAILY_amd64_MATE.iso.md5'.format(sourcedmatemd5=sourcedmatemd5))
+		print os.system('rsync -zvr --progress {sourcedmatelst} Sabayon_Linux_DAILY_amd64_MATE.iso.pkglist'.format(sourcedmatelst=sourcedmatelst))
+		print "rsync complete"
 	elif ans=="3":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedxfce} Sabayon_Linux_DAILY_amd64_Xfce.iso'.format(sourcedxfce=sourcedxfce))
+		print os.system('rsync -zvr --progress {sourcedxfcemd5} Sabayon_Linux_DAILY_amd64_Xfce.iso.md5'.format(sourcedxfcemd5=sourcedxfcemd5))
+		print os.system('rsync -zvr --progress {sourcedxfcelst} Sabayon_Linux_DAILY_amd64_Xfce.iso.pkglist'.format(sourcedxfcelst=sourcedxfcelst))
+		print "rsync complete"
 	elif ans=="4":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedminimal} Sabayon_Linux_DAILY_amd64_Minimal.iso'.format(sourcedminimal=sourcedminimal))
+		print os.system('rsync -zvr --progress {sourcedminimalmd5} Sabayon_Linux_DAILY_amd64_Minimal.iso.md5'.format(sourcedminimalmd5=sourcedminimalmd5))
+		print os.system('rsync -zvr --progress {sourcedminimallst} Sabayon_Linux_DAILY_amd64_Minimal.iso.pkglist'.format(sourcedminimallst=sourcedminimallst))
+		print "rsync complete"
 	elif ans=="5":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedspinbase} Sabayon_Linux_DAILY_amd64_SpinBase.iso'.format(sourcedspinbase=sourcedspinbase))
+		print os.system('rsync --progress {sourcedspinbasemd5} Sabayon_Linux_DAILY_amd64_SpinBase.iso.md5'.format(sourcedspinbasemd5=sourcedspinbasemd5))
+		print os.system('rsync --progress {sourcedspinbaselst} Sabayon_Linux_DAILY_amd64_SpinBase.iso.pkglst'.format(sourcedspinbaselst=sourcedspinbaselst))
+		print "rsync complete"
 	elif ans=="6":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedvkde} Sabayon_Linux_DAILY_amd64_KDE-dev.iso'.format(sourcedvkde=sourcedvkde))
+		print os.system('rsync -zvr --progress {sourcedvkdemd5} Sabayon_Linux_DAILY_amd64_KDE-dev.iso.md5'.format(sourcedvkdemd5=sourcedvkdemd5))
+		print os.system('rsync -zvr --progress {sourcedvkdelst} Sabayon_Linux_DAILY_amd64_KDE-dev.iso.pkglist'.format(sourcedvkdelist=sourcedvkdelist))
+		print "rsync complete"
 	elif ans=="7":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedvgnome} Sabayon_Linux_DAILY_amd64_GNOME-dev.iso'.format(sourcedvgnome=sourcedvgnome))
+		print os.system('rsync -zvr --progress {sourcedvgnomemd5} Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.md5'.format(sourcedvgnomemd5=sourcedvgnomemd5))
+		print os.system('rsync -zvr --progress {sourcedvgnomelst} Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.pkglist'.format(sourcedvgnomelst=sourcedvgnomelst))
+		print "rsync complete"
 	elif ans=="8":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedvmate} Sabayon_Linux_DAILY_amd64_MATE-dev.iso'.format(sourcedvmate=sourcedvmate))
+		print os.system('rsync -zvr --progress {sourcedvmatemd5} Sabayon_Linux_DAILY_amd64_MATE-dev.iso.md5'.format(sourcedvmatemd5=sourcedvmatemd5))
+		print os.system('rsync -zvr --progress {sourcedvmatelst} Sabayon_Linux_DAILY_amd64_MATE-dev.iso.pkglist'.format(sourcedvmatelst=sourcedvmatelst))
+		print "rsync complete"
 	elif ans=="9":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedvxfce} Sabayon_Linux_DAILY_amd64_Xfce-dev.iso'.format(sourcedvxfce=sourcedvxfce))
+		print os.system('rsync -zvr --progress {sourcedvxfcemd5} Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.md5'.format(sourcedvxfcemd5=sourcedvxfcemd5))
+		print os.system('rsync -zvr --progress {sourcedvxfcelst} Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglist'.format(sourcedvxfcelst=sourcedvxfcelst))
+		print "rsync complete"
 	elif ans=="10":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedvminimal} Sabayon_Linux_DAILY_amd64_Minimal-dev.iso'.format(sourcedvminimal=sourcedvminimal))
+		print os.system('rsync -zvr --progress {sourcedvminimalmd5} Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.md5'.format(sourcedvminimalmd5=sourcedvminimalmd5))
+		print os.system('rsync -zvr --progress {sourcedvminimallst} Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.pkglist'.format(sourcedvminimallst=sourcedvminimallst))
+		print "rsync complete"
 	elif ans=="11":
 		print "Starting rsync ..."
 		print os.system('rsync --progress {sourcedvspinbase} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso'.format(sourcedvspinbase=sourcedvspinbase))
+		print os.system('rsync --progress {sourcedvspinbasemd5} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.md5'.format(sourcedvspinbasemd5=sourcedvspinbasemd5))
+		print os.system('rsync --progress {sourcedvspinbaselst} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglist'.format(sourcedvspinbaselst=sourcedvspinbaselst))
+		print "rsync complete"
 	elif ans=="12":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourceskde} Sabayon_Linux_15.06_amd64_KDE.iso'.format(sourceskde=sourceskde))
+		print os.system('rsync -zvr --progress {sourceskdemd5} Sabayon_Linux_15.06_amd64_KDE.iso.md5'.format(sourceskdemd5=sourceskdemd5))
+		print os.system('rsync -zvr --progress {sourceskdelst} Sabayon_Linux_15.06_amd64_KDE.iso.pkglist'.format(sourceskdelst=sourceskdelst))
+		print "rsync complete"
 	elif ans=="13":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcesgnome} Sabayon_Linux_15.06_amd64_GNOME.iso'.format(sourcedgnome=sourcesgnome))
+		print os.system('rsync -zvr --progress {sourcesgnomemd5} Sabayon_Linux_15.06_amd64_GNOME.iso.md5'.format(sourcedgnomemd5=sourcesgnomemd5))
+		print os.system('rsync -zvr --progress {sourcesgnomelst} Sabayon_Linux_15.06_amd64_GNOME.iso.pkglist'.format(sourcedgnomelst=sourcesgnomelst))
+		print "rsync complete"
 	elif ans=="14":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcesmate} Sabayon_Linux_15.06_amd64_MATE.iso'.format(sourcesmate=sourcesmate))
+		print os.system('rsync -zvr --progress {sourcesmatemd5} Sabayon_Linux_15.06_amd64_MATE.iso.md5'.format(sourcesmatemd5=sourcesmatemd5))
+		print os.system('rsync -zvr --progress {sourcesmatelst} Sabayon_Linux_15.06_amd64_MATE.iso.pkglist'.format(sourcesmatelst=sourcesmatelst))
+		print "rsync complete"
 	elif ans=="15":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcesxfce} Sabayon_Linux_15.06_amd64_Xfce.iso'.format(sourcesxfce=sourcesxfce))
+		print os.system('rsync -zvr --progress {sourcesxfcemd5} Sabayon_Linux_15.06_amd64_Xfce.iso.md5'.format(sourcesxfcemd5=sourcesxfcemd5))
+		print os.system('rsync -zvr --progress {sourcesxfcelst} Sabayon_Linux_15.06_amd64_Xfce.iso.pkglist'.format(sourcesxfcelst=sourcesxfcelst))
+		print "rsync complete"
 	elif ans=="16":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcesminimal} Sabayon_Linux_15.06_amd64_Minimal.iso'.format(sourcesminimal=sourcesminimal))
+		print os.system('rsync -zvr --progress {sourcesminimalmd5} Sabayon_Linux_15.06_amd64_Minimal.iso.md5'.format(sourcesminimalmd5=sourcesminimalmd5))
+		print os.system('rsync -zvr --progress {sourcesminimallst} Sabayon_Linux_15.06_amd64_Minimal.iso.pkglist'.format(sourcesminimallst=sourcesminimallst))
+		print "rsync complete"
 	elif ans=="17":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcesspinbase} Sabayon_Linux_15.06_amd64_SpinBase.iso'.format(sourcesspinbase=sourcesspinbase))
+		print os.system('rsync -zvr --progress {sourcesspinbasemd5} Sabayon_Linux_15.06_amd64_SpinBase.iso.md5'.format(sourcesspinbasemd5=sourcesspinbasemd5))
+		print os.system('rsync -zvr --progress {sourcesspinbaselst} Sabayon_Linux_15.06_amd64_SpinBase.iso.pkglist'.format(sourcesspinbaselst=sourcesspinbaselst))
+		print "rsync complete"
 	elif ans=="18":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso'.format(sourcedforensics=sourcedforensics))
+		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5'.format(sourcedforensicsmd5=sourcedforensicsmd5))
+		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist'.format(sourcedforensicslst=sourcedforensicslst))
+		print "rsync complete"
 	elif ans=="19":
 		sys.exit()
 	elif ans !="":
