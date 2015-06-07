@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
      #converted Joost's bash script to python by wolfden
-     #script for rsyncing iso files
-     #Edit the mirror to your liking
+     #script for rsyncing iso files, run in same directory where iso's are stored
+     #Edit the mirrors to your liking
      #version 15.06 stable releases
 
 import subprocess
@@ -157,13 +157,15 @@ print "\nEnter Your Choice Below"
 ans=True									   
 while ans:
 	print ("""
+Sabayon Linux Daily ISO's
 	0.Sabayon_Linux_DAILY_amd64_KDE
 	1.Sabayon_Linux_DAILY_amd64_GNOME
 	2.Sabayon_Linux_DAILY_amd64_MATE
 	3.Sabayon_Linux_DAILY_amd64_Xfce
 	4.Sabayon_Linux_DAILY_amd64_Minimal 
 	5.Sabayon_Linux_DAILY_amd64_SpinBase
-
+		
+Sabayon Linux Dev ISO's
 	6.Sabayon_Linux_DAILY_amd64_KDE-dev
 	7.Sabayon_Linux_DAILY_amd64_GNOME-dev
 	8.Sabayon_Linux_DAILY_amd64_MATE-dev
@@ -171,13 +173,15 @@ while ans:
 	10.Sabayon_Linux_DAILY_amd64_Minimal-dev 
 	11.Sabayon_Linux_DAILY_amd64_SpinBase-dev
 
+Sabayon Linux Stable ISO's
 	12.Sabayon_Linux_amd64_KDE
 	13.Sabayon_Linux_amd64_GNOME
 	14.Sabayon_Linux_amd64_MATE
 	15.Sabayon_Linux_amd64_Xfce
 	16.Sabayon_Linux_amd64_Minimal 
 	17.Sabayon_Linux_amd64_SpinBase
-	
+
+Sabayon Forensics ISO
 	18.Sabayon_Linux_amd64_ForensicsXfce
 	
 	19.Exit
@@ -218,8 +222,8 @@ while ans:
 	elif ans=="5":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedspinbase} Sabayon_Linux_DAILY_amd64_SpinBase.iso'.format(sourcedspinbase=sourcedspinbase))
-		print os.system('rsync --progress {sourcedspinbasemd5} Sabayon_Linux_DAILY_amd64_SpinBase.iso.md5'.format(sourcedspinbasemd5=sourcedspinbasemd5))
-		print os.system('rsync --progress {sourcedspinbaselst} Sabayon_Linux_DAILY_amd64_SpinBase.iso.pkglst'.format(sourcedspinbaselst=sourcedspinbaselst))
+		print os.system('rsync -zvr --progress {sourcedspinbasemd5} Sabayon_Linux_DAILY_amd64_SpinBase.iso.md5'.format(sourcedspinbasemd5=sourcedspinbasemd5))
+		print os.system('rsync -zvr --progress {sourcedspinbaselst} Sabayon_Linux_DAILY_amd64_SpinBase.iso.pkglst'.format(sourcedspinbaselst=sourcedspinbaselst))
 		print "rsync complete"
 	elif ans=="6":
 		print "Starting rsync ..."
@@ -253,9 +257,9 @@ while ans:
 		print "rsync complete"
 	elif ans=="11":
 		print "Starting rsync ..."
-		print os.system('rsync --progress {sourcedvspinbase} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso'.format(sourcedvspinbase=sourcedvspinbase))
-		print os.system('rsync --progress {sourcedvspinbasemd5} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.md5'.format(sourcedvspinbasemd5=sourcedvspinbasemd5))
-		print os.system('rsync --progress {sourcedvspinbaselst} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglist'.format(sourcedvspinbaselst=sourcedvspinbaselst))
+		print os.system('rsync -zvr --progress {sourcedvspinbase} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso'.format(sourcedvspinbase=sourcedvspinbase))
+		print os.system('rsync -zvr --progress {sourcedvspinbasemd5} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.md5'.format(sourcedvspinbasemd5=sourcedvspinbasemd5))
+		print os.system('rsync -zvr --progress {sourcedvspinbaselst} Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglist'.format(sourcedvspinbaselst=sourcedvspinbaselst))
 		print "rsync complete"
 	elif ans=="12":
 		print "Starting rsync ..."
@@ -296,8 +300,8 @@ while ans:
 	elif ans=="18":
 		print "Starting rsync ..."
 		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso'.format(sourcedforensics=sourcedforensics))
-		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5'.format(sourcedforensicsmd5=sourcedforensicsmd5))
-		print os.system('rsync -zvr --progress {sourcedforensics} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist'.format(sourcedforensicslst=sourcedforensicslst))
+		print os.system('rsync -zvr --progress {sourcedforensicsmd5} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5'.format(sourcedforensicsmd5=sourcedforensicsmd5))
+		print os.system('rsync -zvr --progress {sourcedforensicslst} Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist'.format(sourcedforensicslst=sourcedforensicslst))
 		print "rsync complete"
 	elif ans=="19":
 		sys.exit()
