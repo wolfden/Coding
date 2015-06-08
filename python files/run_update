@@ -24,7 +24,7 @@ class bcolors:
 # Start Timer
 startTime = datetime.now()
 # Date and Time of Start
-date_start = subprocess.Popen('date', shell=True)
+date_start = subprocess.Popen('date', shell=False)
 retval = date_start.wait()
 
 # Lets See What Repos We Are Using	
@@ -93,7 +93,7 @@ print " \n"
 print bcolors.BOLD + "This Session Has Ended Successfully" + bcolors.ENDC
 
 # Date and Time of End
-date_end = subprocess.Popen('date', shell=True)
+date_end = subprocess.Popen('date', shell=False)
 retval = date_end.wait()
 # End Timer
 ctime = datetime.now() - startTime
