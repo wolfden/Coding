@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
 
 	#created by wolfden
 	#for learning purposes only, my first py file ever, zomg
@@ -9,6 +8,9 @@
 	
 from datetime import datetime
 import subprocess
+import argparse
+import sys
+import time
 
 # Add some pretty colors	
 class bcolors:
@@ -19,8 +21,33 @@ class bcolors:
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'	
-
+    UNDERLINE = '\033[4m'
+    
+# Arguments to use to optimize mirrors: run_upate [--limbo] [--main] [--weekly]
+parser = argparse.ArgumentParser()
+parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
+parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
+parser.add_argument("--weekly", help="Optimize Weekly Repo", action="store_true")
+args = parser.parse_args()
+if args.limbo:
+	print "Starting to Optimize Limbo Repo"
+	time.sleep(1)
+	limbo = subprocess.Popen('equo repo mirrorsort sabayon-limbo', shell=True)
+	retval = limbo.wait()
+	sys.exit()
+elif args.main:
+	print "Starting to Optimize Main Repo"
+	time.sleep(1)
+	main = subprocess.Popen('equo repo mirrorsort sabayonlinux.org', shell=True)
+	retval = main.wait()
+	sys.exit()
+elif args.weekly:
+	print "Starting to Optimize Weekly Repo"
+	time.sleep(1)
+	weekly = subprocess.Popen('equo repo mirrorsort sabayon-weekly', shell=True)
+	retval = weekly.wait()
+	sys.exit()
+	
 # Start Timer
 startTime = datetime.now()
 # Date and Time of Start
