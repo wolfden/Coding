@@ -23,7 +23,7 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     
-# Arguments to use to optimize mirrors: run_upate [--limbo] [--main] [--weekly]
+# Arguments to use to optimize mirrors: run_update [--limbo] [--main] [--weekly]
 parser = argparse.ArgumentParser()
 parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
 parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
