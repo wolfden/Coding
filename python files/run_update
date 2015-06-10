@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
 	#created by wolfden
-	#for learning purposes only, my first py file ever, zomg
+	#my first py file ever, zomg
 	
-	#goal: to accomplish a py file that can run a system upgrade
-	#with very little human interaction
+	#goal: a python file that can run a system upgrade with very little human interaction
 	
+
 from datetime import datetime
 import subprocess
 import argparse
@@ -53,62 +53,56 @@ startTime = datetime.now()
 # Date and Time of Start
 date_start = subprocess.Popen('date', shell=False)
 retval = date_start.wait()
-
+  
 # Lets See What Repos We Are Using	
 print bcolors.BOLD + "====Current Activated Repositories====" + bcolors.ENDC
-equo_repo = subprocess.Popen('equo repo list', shell=True)
-retval = equo_repo.wait()
+equo_repo = subprocess.check_call("equo repo list", shell=True)
 
 # First we need to update or make sure our Repositories are Current
 print bcolors.BOLD + "====Updating the Repositories====" + bcolors.ENDC
-equo_update = subprocess.Popen('equo update', shell=True)
-retval = equo_update.wait()
+equo_update = subprocess.check_call('equo update', shell=True)
 
 #Syncing license.accept so we don't get prompted for license agreement
 print bcolors.BOLD + "====Updating license.accept file to avoid prompts====" + bcolors.ENDC
-rsync = subprocess.Popen('rsync -av -H -A -X --delete-during "rsync://rsync.at.gentoo.org/gentoo-portage/licenses/" "/usr/portage/licenses/"; ls /usr/portage/licenses -1 | xargs -0 > /etc/entropy/packages/license.accept', shell=True)
-retval = rsync.wait()
+rsync = subprocess.check_call('rsync -av -H -A -X --delete-during "rsync://rsync.at.gentoo.org/gentoo-portage/licenses/" "/usr/portage/licenses/"; ls /usr/portage/licenses -1 | xargs -0 > /etc/entropy/packages/license.accept', shell=True)
 
 # Next we need to make sure latest entropy is installed
 print bcolors.BOLD + "====Installing Latest Entropy====" + bcolors.ENDC
-equo_entropy = subprocess.Popen('equo install app-admin/equo sys-apps/entropy --nodeps', shell=True)
-retval = equo_entropy.wait()
+equo_entropy = subprocess.check_call('equo install app-admin/equo sys-apps/entropy --nodeps', shell=True)
 
 # Next we list number of upgrades available
 print bcolors.BOLD + "====Getting A Count of How Many Packages Need Upgrade or Removed====" + bcolors.ENDC
-equo_upgrades_available = subprocess.Popen('equo q updates', shell=True)
-retval = equo_upgrades_available.wait()
+equo_upgrades_available = subprocess.check_call('equo q updates', shell=True)
 
 # Next we start the upgrade process
 print bcolors.BOLD + "====Starting to Perform Upgrade====" + bcolors.ENDC
-equo_upgrade = subprocess.Popen('equo upgrade', shell=True)
-retval = equo_upgrade.wait()
+equo_upgrade = subprocess.check_call('equo upgrade', shell=True)
 
 # Next we check for missing dependencies
 print bcolors.BOLD + "====Looking for Missing Dependencies====" + bcolors.ENDC
-equo_dep = subprocess.Popen('equo deptest', shell=True)
-retval = equo_dep.wait()
+equo_dep = subprocess.check_call('equo deptest', shell=True)
 
 # Next we clean up
 print bcolors.BOLD + "====Running equo cleanup====" + bcolors.ENDC
-equo_clean = subprocess.Popen('equo cleanup', shell=True)
-retval = equo_clean.wait()
+equo_clean = subprocess.check_call('equo cleanup', shell=True)
 
 print " \n"
 print "========================System Information========================" 
 
 
 # Gather Useful Information and Display it in Terminal
+cpu = subprocess.Popen('uname -p', shell=True)
+cpu = cpu.wait()
 kernel_arch = subprocess.Popen('uname -m', shell=True)
 kernel_arch = kernel_arch.wait()
 release_version = subprocess.Popen('cat /etc/sabayon-release', shell=True)
 release_version = release_version.wait()
 release_edition = subprocess.Popen('cat /etc/sabayon-edition', shell=True)
 release_edition = release_edition.wait()
-cpu = subprocess.Popen('uname -p', shell=True)
-cpu = cpu.wait()
 kernel_version = subprocess.Popen('uname -r', shell=True)
 kernel_version = kernel_version.wait()
+nodename = subprocess.Popen('uname -n', shell=True)
+nodename = nodename.wait()
 print " \n"
 mem_free = subprocess.Popen('free -h', shell=True)
 mem_free = mem_free.wait()
