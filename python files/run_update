@@ -91,24 +91,18 @@ print "========================System Information========================"
 
 
 # Gather Useful Information and Display it in Terminal
-cpu = subprocess.Popen('uname -p', shell=True)
-cpu = cpu.wait()
-kernel_arch = subprocess.Popen('uname -m', shell=True)
-kernel_arch = kernel_arch.wait()
-release_version = subprocess.Popen('cat /etc/sabayon-release', shell=True)
-release_version = release_version.wait()
-release_edition = subprocess.Popen('cat /etc/sabayon-edition', shell=True)
-release_edition = release_edition.wait()
-kernel_version = subprocess.Popen('uname -r', shell=True)
-kernel_version = kernel_version.wait()
-nodename = subprocess.Popen('uname -n', shell=True)
-nodename = nodename.wait()
+cpu = subprocess.check_call('uname -p', shell=True)
+kernel_arch = subprocess.check_call('uname -m', shell=True)
+release_version = subprocess.check_call('cat /etc/sabayon-release', shell=True)
+release_edition = subprocess.check_call('cat /etc/sabayon-edition', shell=True)
+kernel_version = subprocess.check_call('uname -r', shell=True)
+nodename = subprocess.check_call('uname -n', shell=True)
 print " \n"
-mem_free = subprocess.Popen('free -h', shell=True)
-mem_free = mem_free.wait()
+print "~~~Mem Free~~~"
+mem_free = subprocess.check_call('free -h', shell=True)
 print " \n"
-disk_space = subprocess.Popen('df -lT --exclude-type=tmpfs --exclude-type=rootfs', shell=True)
-disk_space = disk_space.wait()
+print "~~~Disk Space~~~"
+disk_space = subprocess.check_call('df -lT --exclude-type=tmpfs --exclude-type=rootfs', shell=True)
 
 print " \n"
 print bcolors.BOLD + "This Session Has Ended Successfully" + bcolors.ENDC
