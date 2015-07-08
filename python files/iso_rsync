@@ -56,9 +56,9 @@ dvssourcemd5 = mirror + mpath + dvspinbasemd5
 dvkdepkglist = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.pkglist"
 dvgnomepkglist = "/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso.pkglist"
 dvmatepkglist = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.pkglist"
-dvxfcepkglist = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglst"
-dvminimalpkglist = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.pkglst"
-dvspinbasepkglist = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglst"
+dvxfcepkglist = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglist"
+dvminimalpkglist = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.pkglist"
+dvspinbasepkglist = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglist"
 
 #Dev pkglist sources
 dvksourcepkglist = mirror + mpath + dvkdepkglist
