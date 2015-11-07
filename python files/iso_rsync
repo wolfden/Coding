@@ -4,7 +4,7 @@
      #script for rsyncing iso files, run in same directory where iso's are stored
      #Edit the mirrors to your liking
      #Edit the isos directory to your liking
-     #version 15.10 stable releases
+     #version 15.11 stable releases
 
 import subprocess
 import sys
@@ -27,6 +27,7 @@ dvmate = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso"
 dvxfce = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso"
 dvminimal = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso"
 dvspinbase = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso"
+dvserver = "/Sabayon_Linux_DAILY_amd64_Server-dev.iso"
 
 #Dev ISOs sources
 dvksource = mirror + mpath + dvkde
@@ -35,6 +36,7 @@ dvmasource = mirror + mpath + dvmate
 dvxsource = mirror + mpath + dvxfce
 dvmsource = mirror + mpath + dvminimal
 dvssource = mirror + mpath + dvspinbase
+dvsvsource = mirror + mpath + dvserver
 
 #Dev md5
 dvkdemd5 = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.md5"
@@ -43,6 +45,7 @@ dvmatemd5 = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.md5"
 dvxfcemd5 = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.md5"
 dvminimalmd5 = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.md5"
 dvspinbasemd5 = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.md5"
+dvsvsourcemd5 = "/Sabayon_Linux_DAILY_amd64_Server-dev.iso.md5"
 
 #Dev md5 sources
 dvksourcemd5 = mirror + mpath + dvkdemd5
@@ -51,6 +54,7 @@ dvmasourcemd5 = mirror + mpath + dvmatemd5
 dvxsourcemd5 = mirror + mpath + dvxfcemd5
 dvmsourcemd5 = mirror + mpath + dvminimalmd5
 dvssourcemd5 = mirror + mpath + dvspinbasemd5
+dvsvsourcemd5 = mirror + mpath + dvsvsourcemd5
 
 #Dev pkglist
 dvkdepkglist = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso.pkglist"
@@ -59,6 +63,7 @@ dvmatepkglist = "/Sabayon_Linux_DAILY_amd64_MATE-dev.iso.pkglist"
 dvxfcepkglist = "/Sabayon_Linux_DAILY_amd64_Xfce-dev.iso.pkglist"
 dvminimalpkglist = "/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso.pkglist"
 dvspinbasepkglist = "/Sabayon_Linux_DAILY_amd64_SpinBase-dev.iso.pkglist"
+dvsvsourcepkglist = "/Sabayon_Linux_DAILY_amd64_Server-dev.iso.pkglist"
 
 #Dev pkglist sources
 dvksourcepkglist = mirror + mpath + dvkdepkglist
@@ -67,6 +72,7 @@ dvmasourcepkglist = mirror + mpath + dvmatepkglist
 dvxsourcepkglist = mirror + mpath + dvxfcepkglist
 dvmsourcepkglist = mirror + mpath + dvminimalpkglist
 dvssourcepkglist = mirror + mpath + dvspinbasepkglist
+dvsvsourcepkglist = mirror + mpath + dvsvsourcepkglist
 
 #Daily ISOs
 dkde = "/Sabayon_Linux_DAILY_amd64_KDE.iso"
@@ -76,6 +82,7 @@ dxfce = "/Sabayon_Linux_DAILY_amd64_Xfce.iso"
 dminimal = "/Sabayon_Linux_DAILY_amd64_Minimal.iso"
 dspinbase = "/Sabayon_Linux_DAILY_amd64_SpinBase.iso"
 dforensics = "/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso"
+dserver = "/Sabayon_Linux_DAILY_amd64_Server.iso"
 
 #Daily sources
 dksource = mirror + mpath + dkde
@@ -85,6 +92,7 @@ dxsource = mirror + mpath + dxfce
 dmsource = mirror + mpath + dminimal
 dssource = mirror + mpath + dspinbase
 dfsource = mirror + mpath + dforensics
+dsvsource = mirror + mpath + dserver
 
 #Daily md5s
 dkdemd5 = "/Sabayon_Linux_DAILY_amd64_KDE.iso.md5"
@@ -94,6 +102,7 @@ dxfcemd5 = "/Sabayon_Linux_DAILY_amd64_Xfce.iso.md5"
 dminimalmd5 = "/Sabayon_Linux_DAILY_amd64_Minimal.iso.md5"
 dspinbasemd5 = "/Sabayon_Linux_DAILY_amd64_SpinBase.iso.md5"
 dforensicsmd5 = "/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.md5"
+dservermd5 = "/Sabayon_Linux_DAILY_amd64_Server.iso.md5"
 
 #Daily md5 sources
 dkmd5source = mirror + mpath + dkdemd5
@@ -103,6 +112,7 @@ dxmd5source = mirror + mpath + dxfcemd5
 dmmd5source = mirror + mpath + dxfcemd5
 dsmd5source = mirror + mpath + dspinbasemd5
 dfmd5source = mirror + mpath + dforensicsmd5
+dsvmd5source = mirror + mpath + dservermd5
 
 #Daily ISO pkglist
 dkdepkglist = "/Sabayon_Linux_DAILY_amd64_KDE.iso.pkglist"
@@ -112,6 +122,7 @@ dxfcepkglist = "/Sabayon_Linux_DAILY_amd64_Xfce.iso.pkglist"
 dminimalpkglist = "/Sabayon_Linux_DAILY_amd64_Minimal.iso.pkglist"
 dspinbasepkglist = "/Sabayon_Linux_DAILY_amd64_SpinBase.iso.pkglist"
 dforensicspkglist = "/Sabayon_Linux_DAILY_amd64_ForensicsXfce.iso.pkglist"
+dserverpkglist = "/Sabayon_Linux_DAILY_amd64_Server.iso.pkglist"
 
 #Daily ISO pkglist sources
 dkpkglistsource = mirror + mpath + dkdepkglist
@@ -121,14 +132,16 @@ dxpkglistsource = mirror + mpath + dxfcepkglist
 dmpkglistsource = mirror + mpath + dminimalpkglist
 dspkglistsource = mirror + mpath + dspinbasepkglist
 dfpkglistsource = mirror + mpath + dforensicspkglist
+dsvpkglistsource = mirror + mpath + dserverpkglist
 
 #Stable ISOs - edit version number to current one, otherwise it will fail
-skde = "/Sabayon_Linux_15.10_amd64_KDE.iso"
-sgnome = "/Sabayon_Linux_15.10_amd64_GNOME.iso"
-smate = "/Sabayon_Linux_15.10_amd64_MATE.iso"
-sxfce = "/Sabayon_Linux_15.10_amd64_Xfce.iso"
-sminimal = "/Sabayon_Linux_15.10_amd64_Minimal.iso"
-sspinbase = "/Sabayon_Linux_15.10_amd64_SpinBase.iso"
+skde = "/Sabayon_Linux_15.11_amd64_KDE.iso"
+sgnome = "/Sabayon_Linux_15.11_amd64_GNOME.iso"
+smate = "/Sabayon_Linux_15.11_amd64_MATE.iso"
+sxfce = "/Sabayon_Linux_15.11_amd64_Xfce.iso"
+sminimal = "/Sabayon_Linux_15.11_amd64_Minimal.iso"
+sspinbase = "/Sabayon_Linux_15.11_amd64_SpinBase.iso"
+sserver = "/Sabayon_Linux_15.11_amd64_Server.iso"
 
 #Stable sources
 sksource = smirror + smpath + skde
@@ -137,14 +150,16 @@ smasource = smirror + smpath + smate
 sxsource = smirror + smpath + sxfce
 smsource = smirror + smpath + sminimal
 sssource = smirror + smpath + sspinbase
+ssvsource = smirror + smpath + sserver
 
 #Stable md5 - edit version number to current one, otherwise it will fail
-skdemd5 = "/Sabayon_Linux_15.10_amd64_KDE.iso.md5"
-sgnomemd5 = "/Sabayon_Linux_15.10_amd64_GNOME.iso.md5"
-smatemd5 = "/Sabayon_Linux_15.10_amd64_MATE.iso.md5"
-sxfcemd5 = "/Sabayon_Linux_15.10_amd64_Xfce.iso.md5"
-sminimalmd5 = "/Sabayon_Linux_15.10_amd64_Minimal.iso.md5"
-sspinbasemd5 = "/Sabayon_Linux_15.10_amd64_SpinBase.iso.md5"
+skdemd5 = "/Sabayon_Linux_15.11_amd64_KDE.iso.md5"
+sgnomemd5 = "/Sabayon_Linux_15.11_amd64_GNOME.iso.md5"
+smatemd5 = "/Sabayon_Linux_15.11_amd64_MATE.iso.md5"
+sxfcemd5 = "/Sabayon_Linux_15.11_amd64_Xfce.iso.md5"
+sminimalmd5 = "/Sabayon_Linux_15.11_amd64_Minimal.iso.md5"
+sspinbasemd5 = "/Sabayon_Linux_15.11_amd64_SpinBase.iso.md5"
+sservermd5 = "/Sabayon_Linux_15.11_amd64_Server.iso.md5"
 
 #Stable md5 sources
 sksourcemd5 = smirror + smpath + skdemd5
@@ -153,14 +168,16 @@ smasourcemd5 = smirror + smpath + smatemd5
 sxsourcemd5 = smirror + smpath + sxfcemd5
 smsourcemd5 = smirror + smpath + sminimalmd5
 sssourcemd5 = smirror + smpath + sspinbasemd5
+ssvsourcemd5 = smirror + smpath + sservermd5
 
 #Stable pkglist - edit version number to current one, otherwise it will fail
-skdepkglist = "/Sabayon_Linux_15.10_amd64_KDE.iso.pkglist"
-sgnomepkglist = "/Sabayon_Linux_15.10_amd64_GNOME.iso.pkglist"
-smatepkglist = "/Sabayon_Linux_15.10_amd64_MATE.iso.pkglist"
-sxfcepkglist = "/Sabayon_Linux_15.10_amd64_Xfce.iso.pkglist"
-sminimalpkglist = "/Sabayon_Linux_15.10_amd64_Minimal.iso.pkglist"
-sspinbasepkglist = "/Sabayon_Linux_15.10_amd64_SpinBase.iso.pkglist"
+skdepkglist = "/Sabayon_Linux_15.11_amd64_KDE.iso.pkglist"
+sgnomepkglist = "/Sabayon_Linux_15.11_amd64_GNOME.iso.pkglist"
+smatepkglist = "/Sabayon_Linux_15.11_amd64_MATE.iso.pkglist"
+sxfcepkglist = "/Sabayon_Linux_15.11_amd64_Xfce.iso.pkglist"
+sminimalpkglist = "/Sabayon_Linux_15.11_amd64_Minimal.iso.pkglist"
+sspinbasepkglist = "/Sabayon_Linux_15.11_amd64_SpinBase.iso.pkglist"
+sserverbasepkglist = "/Sabayon_Linux_15.11_amd64_Server.iso.pkglist"
 
 #Stable pkglist sources
 sksourcepkglist = smirror + smpath + skdepkglist
@@ -169,13 +186,14 @@ smasourcepkglist = smirror + smpath + smatepkglist
 sxsourcepkglist = smirror + smpath + sxfcepkglist
 smsourcepkglist = smirror + smpath + sminimalpkglist
 sssourcepkglist = smirror + smpath + sspinbasepkglist
+ssvsourcepkglist = smirror + smpath + sspinbasepkglist
 
 
-print "\nWelcome to the Sabayon Linux(tm) Syncmaster!"   
+print "\nWelcome to the Sabayon Linux(tm) Syncmaster!"
 
 print "\nEnter Your Choice Below"
 #Menu with choice, user will enter a number for desire choice
-ans=True									   
+ans=True
 while ans:
 	print ("""
 Sabayon Linux Dev ISO's
@@ -183,29 +201,32 @@ Sabayon Linux Dev ISO's
 	1.Sabayon_Linux_DAILY_amd64_GNOME-dev
 	2.Sabayon_Linux_DAILY_amd64_MATE-dev
 	3.Sabayon_Linux_DAILY_amd64_Xfce-dev
-	4.Sabayon_Linux_DAILY_amd64_Minimal-dev 
+	4.Sabayon_Linux_DAILY_amd64_Minimal-dev
 	5.Sabayon_Linux_DAILY_amd64_SpinBase-dev
+        6.Sabayon_Linux_DAILY_amd64_Server-dev
 
 Sabayon Linux Daily ISO's
-	6.Sabayon_Linux_DAILY_amd64_KDE
-	7.Sabayon_Linux_DAILY_amd64_GNOME
-	8.Sabayon_Linux_DAILY_amd64_MATE
-	9.Sabayon_Linux_DAILY_amd64_Xfce
-	10.Sabayon_Linux_DAILY_amd64_Minimal 
-	11.Sabayon_Linux_DAILY_amd64_SpinBase
-		
+	7.Sabayon_Linux_DAILY_amd64_KDE
+	8.Sabayon_Linux_DAILY_amd64_GNOME
+	9.Sabayon_Linux_DAILY_amd64_MATE
+	10.Sabayon_Linux_DAILY_amd64_Xfce
+	11.Sabayon_Linux_DAILY_amd64_Minimal
+	12.Sabayon_Linux_DAILY_amd64_SpinBase
+        13.Sabayon_Linux_DAILY_amd64_Server
+
 Sabayon Linux Stable ISO's
-	12.Sabayon_Linux_amd64_KDE
-	13.Sabayon_Linux_amd64_GNOME
-	14.Sabayon_Linux_amd64_MATE
-	15.Sabayon_Linux_amd64_Xfce
-	16.Sabayon_Linux_amd64_Minimal 
-	17.Sabayon_Linux_amd64_SpinBase
+	14.Sabayon_Linux_amd64_KDE
+	15.Sabayon_Linux_amd64_GNOME
+	16.Sabayon_Linux_amd64_MATE
+	17.Sabayon_Linux_amd64_Xfce
+	18.Sabayon_Linux_amd64_Minima 
+	19.Sabayon_Linux_amd64_SpinBase
+        20.Sabayon_Linux_amd64_Server
 
 Sabayon Forensics ISO
-	18.Sabayon_Linux_amd64_ForensicsXfce
-	
-	19.Exit
+	21.Sabayon_Linux_amd64_ForensicsXfce
+
+	22.Exit
 """)
 #All the rsync stuffs via menu selection
 	ans=raw_input("Enter Number From Above:")
@@ -246,84 +267,102 @@ Sabayon Forensics ISO
 		subprocess.call(['rsync','-zvr','--progress',dvssourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',dvssourcepkglist, isos])
 		print "rsync complete"
-	elif ans=="6":
+        elif ans=="6":
+                print "Starting rsync ..."
+                subprocess.call(['rsync','-zvr','--progress',dvsvsource, isos])
+                subprocess.call(['rsync','-zvr','--progress',dvsvsourcemd5, isos])
+                subprocess.call(['rsync','-zvr','--progress',dvsvsourcepkglist, isos])
+                print "rsync complete"
+	elif ans=="7":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dksource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dkmd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dkpkglistsource, isos])
 		print "rsync complete"
-	elif ans=="7":
+	elif ans=="8":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dgsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dgmd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dgpkglistsource, isos])
 		print "rsync complete"
-	elif ans=="8":
+	elif ans=="9":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dmasource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dmamd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dmapkglistsource, isos])
 		print "rsync complete"
-	elif ans=="9":
+	elif ans=="10":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dxsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dxmd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dxpkglistsource, isos])
 		print "rsync complete"
-	elif ans=="10":
+	elif ans=="11":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dmsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dmmd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dmpkglistsource, isos])
 		print "rsync complete"
-	elif ans=="11":
+	elif ans=="12":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dssource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dsmd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dspkglistsource, isos])
-	elif ans=="12":
+        elif ans=="13":
+                print "Starting rsync ..."
+                subprocess.call(['rsync','-zvr','--progress',dsvsource, isos])
+                subprocess.call(['rsync','-zvr','--progress',dsvmd5source, isos])
+                subprocess.call(['rsync','-zvr','--progress',dsvpkglistsource, isos])
+                print "rsync complete"
+	elif ans=="14":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',sksource, isos])
 		subprocess.call(['rsync','-zvr','--progress',sksourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',sksourcepkglist, isos])
 		print "rsync complete"
-	elif ans=="13":
+	elif ans=="15":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',sgsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',sgsourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',sgsourcepkglist, isos])
 		print "rsync complete"
-	elif ans=="14":
+	elif ans=="16":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',smasource, isos])
 		subprocess.call(['rsync','-zvr','--progress',smasourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',smasourcepkglist, isos])
 		print "rsync complete"
-	elif ans=="15":
+	elif ans=="17":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',sxsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',sxsourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',sxsourcepkglist, isos])
 		print "rsync complete"
-	elif ans=="16":
+	elif ans=="18":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',smsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',smsourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',smsourcepkglist, isos])
 		print "rsync complete"
-	elif ans=="17":
+	elif ans=="19":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',sssource, isos])
 		subprocess.call(['rsync','-zvr','--progress',sssourcemd5, isos])
 		subprocess.call(['rsync','-zvr','--progress',sssourcepkglist, isos])
-		print "rsync complete"		
-	elif ans=="18":
+		print "rsync complete"
+        elif ans=="20":
+                print "Starting rsync ..."
+                subprocess.call(['rsync','-zvr','--progress',ssvsource, isos])
+                subprocess.call(['rsync','-zvr','--progress',ssvsourcemd5, isos])
+                subprocess.call(['rsync','-zvr','--progress',ssvsourcepkglist, isos])
+                print "rsync complete"
+  	elif ans=="21":
 		print "Starting rsync ..."
 		subprocess.call(['rsync','-zvr','--progress',dfsource, isos])
 		subprocess.call(['rsync','-zvr','--progress',dfmd5source, isos])
 		subprocess.call(['rsync','-zvr','--progress',dfpkglistsource, isos])
-		print "rsync complete"		
-	elif ans=="19":
+		print "rsync complete"
+	elif ans=="22":
 		print "Thanks for using Sabayon Linux(tm) Syncmaster"
 		sys.exit()
 	elif ans !="":
