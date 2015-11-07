@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
      #converted Joost's bash script to python by wolfden
-     #script for rsyncing iso files, run in same directory where iso's are stored
+     #script for rsyncing iso files
      #Edit the mirrors to your liking
      #Edit the isos directory to your liking
      #version 15.11 stable releases
