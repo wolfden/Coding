@@ -2,9 +2,9 @@
 
 	#created by wolfden
 	#my first py file ever, zomg
-	
+
 	#goal: a python file that can run a system upgrade with very little human interaction
-	
+
 
 from datetime import datetime
 import subprocess
@@ -12,7 +12,7 @@ import argparse
 import sys
 import time
 
-# Add some pretty colors	
+# Add some pretty colors
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -22,12 +22,13 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-    
-# Arguments to use to optimize mirrors: run_update [--limbo] [--main] [--weekly]
+
+# Arguments to use to optimize mirrors: run_update [--limbo] [--main] [--weekly] [--status]
 parser = argparse.ArgumentParser()
 parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
 parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
 parser.add_argument("--weekly", help="Optimize Weekly Repo", action="store_true")
+parser.add_argument("--status", help="Repositories Status", action="store_true")
 args = parser.parse_args()
 if args.limbo:
 	print "Starting to Optimize Limbo Repo"
@@ -47,14 +48,20 @@ elif args.weekly:
 	weekly = subprocess.Popen('equo repo mirrorsort sabayon-weekly', shell=True)
 	retval = weekly.wait()
 	sys.exit()
-	
+elif args.status:
+	print "Getting Repositories Status"
+	time.sleep(1)
+	status = subprocess.Popen('equo status', shell=True)
+	retval = status.wait()
+	sys.exit()
+
 # Start Timer
 startTime = datetime.now()
 # Date and Time of Start
 date_start = subprocess.Popen('date', shell=False)
 retval = date_start.wait()
-  
-# Lets See What Repos We Are Using	
+
+# Lets See What Repos We Are Using
 print bcolors.BOLD + "====Current Activated Repositories====" + bcolors.ENDC
 equo_repo = subprocess.check_call("equo repo list", shell=True)
 
@@ -87,7 +94,7 @@ print bcolors.BOLD + "====Running equo cleanup====" + bcolors.ENDC
 equo_clean = subprocess.check_call('equo cleanup', shell=True)
 
 print " \n"
-print "========================System Information========================" 
+print "========================System Information========================"
 
 
 # Gather Useful Information and Display it in Terminal
@@ -116,4 +123,3 @@ print "Time to Complete ", ctime
 
 
 print " \n"
-
