@@ -11,6 +11,7 @@ import subprocess
 import argparse
 import sys
 import time
+import os
 
 # Add some pretty colors
 class bcolors:
@@ -22,6 +23,11 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+if os.geteuid() != 0:
+	print "Must be root user or enter your password below to sudo"
+    	os.execvp("sudo", ["sudo"] + sys.argv)
+
 
 # Arguments to use to optimize mirrors: run_update [--limbo] [--main] [--weekly] [--status]
 parser = argparse.ArgumentParser()
