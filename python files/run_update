@@ -95,8 +95,7 @@ equo_entropy = subprocess.check_call('equo install app-admin/equo \
     sys-apps/entropy --nodeps', shell=True)
 
 # Next we list number of upgrades available
-print bcolors.BOLD + "====Getting A Count of How Many Packages Need Upgrade \
-    or Removed====" + bcolors.ENDC
+print bcolors.BOLD + "====Getting A Count on Packages====" + bcolors.ENDC
 equo_upgrades_available = subprocess.check_call('equo q updates', shell=True)
 
 # Next we start the upgrade process
