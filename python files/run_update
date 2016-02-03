@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
-	#created by wolfden
-	#my first py file ever, zomg
+# created by wolfden
 
-	#goal: a python file that can run a system upgrade with very little human interaction
+# my first py file ever, zomg
 
+# goal - run a system upgrade with very little human interaction
 
 from datetime import datetime
 import subprocess
@@ -12,6 +12,7 @@ import argparse
 import sys
 import time
 import os
+
 
 # Add some pretty colors
 class bcolors:
@@ -24,42 +25,48 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+# Check if user is root and if not, prompt for sudo password
 if os.geteuid() != 0:
-	print "Must be root user or enter your password below to sudo"
-    	os.execvp("sudo", ["sudo"] + sys.argv)
+    print "Must be root user or enter your password below to sudo"
+    os.execvp("sudo", ["sudo"] + sys.argv)
 
-
-# Arguments to use to optimize mirrors: run_update [--limbo] [--main] [--weekly] [--status]
+# Arguments optimize mirrors run_update
+# [--limbo] [--main] [--weekly] [--status]
 parser = argparse.ArgumentParser()
 parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
 parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
-parser.add_argument("--weekly", help="Optimize Weekly Repo", action="store_true")
-parser.add_argument("--status", help="Repositories Status", action="store_true")
+parser.add_argument("--weekly", help="Optimize Weekly Repo\
+    ", action="store_true")
+parser.add_argument("--status", help="Repositories Status\
+    ", action="store_true")
 args = parser.parse_args()
+
 if args.limbo:
-	print "Starting to Optimize Limbo Repo"
-	time.sleep(1)
-	limbo = subprocess.Popen('equo repo mirrorsort sabayon-limbo', shell=True)
-	retval = limbo.wait()
-	sys.exit()
+    print "Starting to Optimize Limbo Repo"
+    time.sleep(1)
+    limbo = subprocess.Popen('equo repo mirrorsort sabayon-limbo', shell=True)
+    retval = limbo.wait()
+    sys.exit()
 elif args.main:
-	print "Starting to Optimize Main Repo"
-	time.sleep(1)
-	main = subprocess.Popen('equo repo mirrorsort sabayonlinux.org', shell=True)
-	retval = main.wait()
-	sys.exit()
+    print "Starting to Optimize Main Repo"
+    time.sleep(1)
+    main = subprocess.Popen('equo repo mirrorsort \
+    sabayonlinux.org', shell=True)
+    retval = main.wait()
+    sys.exit()
 elif args.weekly:
-	print "Starting to Optimize Weekly Repo"
-	time.sleep(1)
-	weekly = subprocess.Popen('equo repo mirrorsort sabayon-weekly', shell=True)
-	retval = weekly.wait()
-	sys.exit()
+    print "Starting to Optimize Weekly Repo"
+    time.sleep(1)
+    weekly = subprocess.Popen('equo repo mirrorsort \
+    sabayon-weekly', shell=True)
+    retval = weekly.wait()
+    sys.exit()
 elif args.status:
-	print "Getting Repositories Status"
-	time.sleep(1)
-	status = subprocess.Popen('equo status', shell=True)
-	retval = status.wait()
-	sys.exit()
+    print "Getting Repositories Status"
+    time.sleep(1)
+    status = subprocess.Popen('equo status', shell=True)
+    retval = status.wait()
+    sys.exit()
 
 # Start Timer
 startTime = datetime.now()
@@ -75,16 +82,21 @@ equo_repo = subprocess.check_call("equo repo list", shell=True)
 print bcolors.BOLD + "====Updating the Repositories====" + bcolors.ENDC
 equo_update = subprocess.check_call('equo update', shell=True)
 
-#Syncing license.accept so we don't get prompted for license agreement
-print bcolors.BOLD + "====Updating license.accept file to avoid prompts====" + bcolors.ENDC
-rsync = subprocess.check_call('rsync -av -H -A -X --delete-during "rsync://rsync.at.gentoo.org/gentoo-portage/licenses/" "/usr/portage/licenses/"; ls /usr/portage/licenses -1 | xargs -0 > /etc/entropy/packages/license.accept', shell=True)
+# Syncing license.accept so we don't get prompted for license agreement
+print bcolors.BOLD + "====Updating license.accept file====" + bcolors.ENDC
+rsync = subprocess.check_call('rsync -av -H -A -X --delete-during \
+    "rsync://rsync.at.gentoo.org/gentoo-portage/licenses/" \
+    "/usr/portage/licenses/"; ls /usr/portage/licenses -1 | \
+    xargs -0 > /etc/entropy/packages/license.accept', shell=True)
 
 # Next we need to make sure latest entropy is installed
 print bcolors.BOLD + "====Installing Latest Entropy====" + bcolors.ENDC
-equo_entropy = subprocess.check_call('equo install app-admin/equo sys-apps/entropy --nodeps', shell=True)
+equo_entropy = subprocess.check_call('equo install app-admin/equo \
+    sys-apps/entropy --nodeps', shell=True)
 
 # Next we list number of upgrades available
-print bcolors.BOLD + "====Getting A Count of How Many Packages Need Upgrade or Removed====" + bcolors.ENDC
+print bcolors.BOLD + "====Getting A Count of How Many Packages Need Upgrade \
+    or Removed====" + bcolors.ENDC
 equo_upgrades_available = subprocess.check_call('equo q updates', shell=True)
 
 # Next we start the upgrade process
@@ -115,7 +127,8 @@ print "~~~Mem Free~~~"
 mem_free = subprocess.check_call('free -h', shell=True)
 print " \n"
 print "~~~Disk Space~~~"
-disk_space = subprocess.check_call('df -lT --exclude-type=tmpfs --exclude-type=rootfs', shell=True)
+disk_space = subprocess.check_call('df -lT --exclude-type=tmpfs \
+    --exclude-type=rootfs', shell=True)
 
 print " \n"
 print bcolors.BOLD + "This Session Has Ended Successfully" + bcolors.ENDC
