@@ -1122,20 +1122,7 @@ detectde () {
 					fi
 				elif [[ -n ${MATE_DESKTOP_SESSION_ID} ]]; then
 					DE="MATE"
-				elif [[ -n ${KDE_SESSION_VERSION} ]]; then
-					if [[ ${KDE_SESSION_VERSION} == '5' ]]; then
-						DE="KDE5"
-						DEplasma=$(awk -F"=" '/X-KDE-PluginInfo-Version=/ {print $2}' /usr/share/xsessions/plasma.desktop)
-					elif [[ ${KDE_SESSION_VERSION} == '4' ]]; then
-						DE="KDE4"
-					fi
-				elif [[ -n ${KDE_FULL_SESSION} ]]; then
-					if [[ ${KDE_FULL_SESSION} == 'true' ]]; then
-						DE="KDE"
-						DEver_data=$( kded --version 2>/dev/null )
-						DEver=$( grep -si '^KDE:' <<< "$DEver_data" | awk '{print $2}' )
-						DEplasma=$(awk -F"=" '/X-KDE-PluginInfo-Version=/ {print $2}' /usr/share/xsessions/plasma.desktop)
-					fi
+
 				elif [[ -n "${DESKTOP_SESSION}" ]]; then
 					if [[ "${DESKTOP_SESSION}" == "budgie-desktop" ]]; then
 						DE="Budgie"
@@ -1158,8 +1145,8 @@ detectde () {
 							de = toupper(de)
 							exit
 						}
-						else if ($1 ~/^KDE_SESSION_VERSION/) {
-							de = "KDE"$NF
+					else if ($1 ~/^KDE_SESSION_VERSION/) {
+							de = "PLASMA"$NF
 							exit
 						}
 						else if ($1 ~ /^_MARCO/) {

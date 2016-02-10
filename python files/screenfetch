@@ -85,8 +85,6 @@ display_index=0
 # User options
 gtk_2line="no"
 
-myplasma=$(awk -F"=" '/X-KDE-PluginInfo-Version=/ {print $2}' /usr/share/xsessions/plasma.desktop)
-
 # Static Color Definitions
 colorize () {
 	printf "\033[38;5;$1m"
@@ -1453,6 +1451,8 @@ detectwmtheme () {
 
 			if [[ -n $KDE_CONFIG_DIR ]]; then
 				Win_theme=$(awk -F"=" '/name=/ {print $2}' $HOME/.config/plasmarc)
+				if [[ -n $KDE_CONFIG_DIR ]]; then
+					my_plasma=$(awk -F"=" '/X-KDE-PluginInfo-Version=/ {print $2}' /usr/share/xsessions/plasma.desktop)
 				if [[ -z $Win_theme ]]; then
 					if [[ -f $KDE_CONFIG_DIR/share/config/kdebugrc ]]; then
 						Win_theme=$(awk '/(decoration)/ {gsub(/\[/,"",$1); print $1; exit}' $KDE_CONFIG_DIR/share/config/kdebugrc)
@@ -1463,6 +1463,7 @@ detectwmtheme () {
 						Win_theme="Not Applicable"
 					fi
 				fi
+			fi
 
 				if [[ $Win_theme != 'Not Applicable' ]]; then
 					if [[ ${BASH_VERSINFO[0]} -ge 4 ]]; then
@@ -3427,9 +3428,9 @@ infoDisplay () {
 			if [[ "${display[@]}" =~ "de" ]]; then
 				if [[ "${DE}" != "Not Present" ]]; then
 					myde=$(echo -e "$labelcolor DE:$textcolor $DE"); out_array=( "${out_array[@]}" "$myde" );
-					myplasma=$(echo -e "$labelcolor Plasma:$textcolor $myplasma"); out_array=( "${out_array[@]}" "$myplasma" );  ((display_index++))
 				fi
 			fi
+			if [[ "${display[@]}" =~ "myplasma" ]]; then my_plasma=$(echo -e "$labelcolor Plasma:$textcolor $my_plasma"); out_array=( "${out_array[@]}" "$my_plasma" ); ((display_index++)); fi
 			if [[ "${display[@]}" =~ "wm" ]]; then mywm=$(echo -e "$labelcolor WM:$textcolor $WM"); out_array=( "${out_array[@]}" "$mywm" ); ((display_index++)); fi
 			if [[ "${display[@]}" =~ "wmtheme" ]]; then
 					if [[ "${Win_theme}" == "Not Applicable" || "${Win_theme}" == "Not Found" ]]; then
