@@ -137,7 +137,7 @@ print Bcolors.BOLD + "This Session Has Ended Successfully" + Bcolors.ENDC
 
 # Date and Time of End
 date_end = subprocess.Popen('date', shell=False)
-# retval = date_end.wait()
+
 # End Timer
 ctime = datetime.datetime.now() - startTime
 print "Time to Complete ", ctime
