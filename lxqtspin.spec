@@ -9,7 +9,7 @@
 execution_strategy: iso_remaster
 
 # Path to source ISO file (MANDATORY)
-source_iso: /spin/Sabayon_Linux_16.02_amd64_SpinBase.iso
+source_iso: /home/spongebob/dev/Sabayon_Linux_DAILY_amd64_Minimal-dev.iso
 
 # Error script command, executed when something went wrong and molecule has to terminate the execution
 # environment variables exported:
@@ -44,7 +44,7 @@ extra_mkisofs_parameters: -b isolinux/isolinux.bin -c isolinux/boot.cat
 destination_iso_directory: /spin/final
 
 # Output iso image title
-iso_title: Sabayon_Linux_LXQT_amd64.iso
+iso_title: Sabayon LXQT Spin
 
 # Alternative ISO file mount command (default is: mount -o loop -t iso9660)
 # iso_mounter:
@@ -59,13 +59,13 @@ iso_title: Sabayon_Linux_LXQT_amd64.iso
 # merge_livecd_root: /put/more/files/onto/CD/root
 
 # List of packages that would be removed from chrooted system (comma separated)
-# packages_to_remove: foo, foo2, foo3, foo4, foo5
+packages_to_remove: x11-wm/fluxbox, www-client/midori
 
 # Custom shell call to packages removal (default is: equo remove)
 # custom_packages_remove_cmd:
 
 # List of packages that would be added from chrooted system (comma separated)
-packages_to_add: lxqt-base/lxqt-meta
+packages_to_add: lxqt-base/lxqt-meta, x11-terms/qterminal, x11-misc/pcmanfm-qt, x11-misc/obconf-qt, media-gfx/lximage-qt, www-client/google-chrome, media-video/mpv, app-editors/juffed
 
 # Custom shell call to packages add (default is: equo install)
 # custom_packages_add_cmd:
