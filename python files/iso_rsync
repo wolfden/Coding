@@ -10,15 +10,15 @@ import subprocess
 import sys
 
 # Change daily mirror url to your favorite mirror
-mirror = "rsync://ftp.SURFnet.nl"
-mpath = "/sabayonlinux/iso/daily/"
+mirror = "rsync://rsync.belnet.be"
+mpath = "/sabayon/iso/daily/"
 
 # Change monthly mirror url to your favorite mirror
-smirror = "rsync://ftp.SURFnet.nl"
-smpath = "/sabayonlinux/iso/monthly/"
+smirror = "rsync://rsync.belnet.be"
+smpath = "/sabayon/iso/monthly/"
 
 # Directory of stored ISOs -- Edit to fit your setup
-isos = "/home/someusernamehere/path"
+isos = "/home/"
 
 # Dev ISOs
 dvkde = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso"
