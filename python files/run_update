@@ -42,9 +42,12 @@ parser.add_argument("--weekly", help="Optimize Weekly Repo\
     ", action="store_true")
 parser.add_argument("--status", help="Repositories Status\
     ", action="store_true")
-parser.add_argument("--elimbo", help="Enable Limbo Repo", action="store_true")
-parser.add_argument("--emain", help="Enable Main Repo", action="store_true")
-parser.add_argument("--eweekly", help="Enable Weekly Repo", action="store_true")
+parser.add_argument("--enable-limbo", help="Enable Limbo Repo", action="store_true")
+parser.add_argument("--enable-main", help="Enable Main Repo", action="store_true")
+parser.add_argument("--enable-weekly", help="Enable Weekly Repo", action="store_true")
+parser.add_argument("--disable-limbo", help="Disable Limbo Repo", action="store_true")
+parser.add_argument("--disable-main", help="Disable Main Repo", action="store_true")
+parser.add_argument("--disable-weekly", help="Disable Weekly Repo", action="store_true")
 args = parser.parse_args()
 
 if args.limbo:
@@ -73,27 +76,49 @@ elif args.status:
     status = subprocess.Popen('equo status', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.elimbo:
+elif args.enable_limbo:
     print "Enabling Limbo Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayon-limbo', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.emain:
+elif args.enable_main:
     print "Enabling Main Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayonlinux.org', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.eweekly:
+elif args.enable_weekly:
     print "Enabling Weekly Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayon-weekly', shell=True)
     retval = status.wait()
     sys.exit()
+elif args.disable_limbo:
+    print "Disabling Limbo Repo"
+    time.sleep(1)
+    status = subprocess.Popen('equo repo disable \
+    sabayon-limbo', shell=True)
+    retval = status.wait()
+    sys.exit()
+elif args.disable_main:
+    print "Disabling Main Repo"
+    time.sleep(1)
+    status = subprocess.Popen('equo repo disable \
+    sabayonlinux.org', shell=True)
+    retval = status.wait()
+    sys.exit()
+elif args.disable_weekly:
+    print "Disabling Weekly Repo"
+    time.sleep(1)
+    status = subprocess.Popen('equo repo disable \
+    sabayon-weekly', shell=True)
+    retval = status.wait()
+    sys.exit()
+
 
 # Start Timer
 startTime = datetime.datetime.now()
