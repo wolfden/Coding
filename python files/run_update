@@ -42,6 +42,9 @@ parser.add_argument("--weekly", help="Optimize Weekly Repo\
     ", action="store_true")
 parser.add_argument("--status", help="Repositories Status\
     ", action="store_true")
+parser.add_argument("--elimbo", help="Enable Limbo Repo", action="store_true")
+parser.add_argument("--emain", help="Enable Main Repo", action="store_true")
+parser.add_argument("--eweekly", help="Enable Weekly Repo", action="store_true")
 args = parser.parse_args()
 
 if args.limbo:
@@ -68,6 +71,27 @@ elif args.status:
     print "Getting Repositories Status"
     time.sleep(1)
     status = subprocess.Popen('equo status', shell=True)
+    retval = status.wait()
+    sys.exit()
+elif args.elimbo:
+    print "Enabling Limbo Repo"
+    time.sleep(1)
+    status = subprocess.Popen('equo repo enable \
+    sabayon-limbo', shell=True)
+    retval = status.wait()
+    sys.exit()
+elif args.emain:
+    print "Enabling Main Repo"
+    time.sleep(1)
+    status = subprocess.Popen('equo repo enable \
+    sabayonlinux.org', shell=True)
+    retval = status.wait()
+    sys.exit()
+elif args.eweekly:
+    print "Enabling Weekly Repo"
+    time.sleep(1)
+    status = subprocess.Popen('equo repo enable \
+    sabayon-weekly', shell=True)
     retval = status.wait()
     sys.exit()
 
