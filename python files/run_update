@@ -38,9 +38,9 @@ if os.geteuid() != 0:
 parser = argparse.ArgumentParser()
 parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
 parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
-parser.add_argument("--weekly", help="Optimize Weekly Repo\", action="\
+parser.add_argument("--weekly", help="Optimize Weekly Repo", action="\
         store_true")
-parser.add_argument("--status", help="Repositories Status\", action="\
+parser.add_argument("--status", help="Repositories Status", action="\
         store_true")
 parser.add_argument("--enable-limbo", help="Enable Limbo Repo", action="\
         store_true")
