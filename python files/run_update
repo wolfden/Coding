@@ -38,22 +38,22 @@ if os.geteuid() != 0:
 parser = argparse.ArgumentParser()
 parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
 parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
-parser.add_argument("--weekly", help="Optimize Weekly Repo", 
-	action="store_true")
-parser.add_argument("--status", help="Repositories Status", 
-	action="store_true")
-parser.add_argument("--enable-limbo", help="Enable Limbo Repo", 
-	action="store_true")
-parser.add_argument("--enable-main", help="Enable Main Repo", 
-	action="store_true")
-parser.add_argument("--enable-weekly", help="Enable Weekly Repo", 
-	action="store_true")
-parser.add_argument("--disable-limbo", help="Disable Limbo Repo", 
-	action="store_true")
-parser.add_argument("--disable-main", help="Disable Main Repo", 
-action="store_true")
-parser.add_argument("--disable-weekly", help="Disable Weekly Repo", 
-	action="store_true")
+parser.add_argument("--weekly", help="Optimize Weekly Repo",
+        action="store_true")
+parser.add_argument("--status", help="Repositories Status",
+        action="store_true")
+parser.add_argument("--enable-limbo", help="Enable Limbo Repo",
+        action="store_true")
+parser.add_argument("--enable-main", help="Enable Main Repo",
+        action="store_true")
+parser.add_argument("--enable-weekly", help="Enable Weekly Repo",
+        action="store_true")
+parser.add_argument("--disable-limbo", help="Disable Limbo Repo",
+        action="store_true")
+parser.add_argument("--disable-main", help="Disable Main Repo",
+        action="store_true")
+parser.add_argument("--disable-weekly", help="Disable Weekly Repo",
+        action="store_true")
 args = parser.parse_args()
 
 if args.limbo:
