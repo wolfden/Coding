@@ -17,7 +17,7 @@ import os
 # Add some pretty colors
 class Bcolors:
     def __init__(self):
-        pass
+        passretval = main.wait()
 
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -28,32 +28,40 @@ class Bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-# Check if user is root and if not, prompt for sudo password
-if os.geteuid() != 0:
-    print "Must be root user or enter your password below to sudo"
-    os.execvp("sudo", ["sudo"] + sys.argv)
-
+###root check, sudo if not to keep going
+euid = os.geteuid()
+if euid != 0:
+    print "User not root..." '\n' "Running sudo to Continue...." '\n'
+    time.sleep(1)
+    args = ['sudo', sys.executable] + sys.argv + [os.environ]
+    os.execlpe('sudo', *args)
+    
 # Arguments optimize mirrors run_update
 # [--limbo] [--main] [--weekly] [--status]
 parser = argparse.ArgumentParser()
 parser.add_argument("--limbo", help="Optimize Limbo Repo", action="store_true")
 parser.add_argument("--main", help="Optimize Main Repo", action="store_true")
 parser.add_argument("--weekly", help="Optimize Weekly Repo",
-        action="store_true")
+    action="store_true")
 parser.add_argument("--status", help="Repositories Status",
-        action="store_true")
-parser.add_argument("--enable-limbo", help="Enable Limbo Repo",
-        action="store_true")
-parser.add_argument("--enable-main", help="Enable Main Repo",
-        action="store_true")
-parser.add_argument("--enable-weekly", help="Enable Weekly Repo",
-        action="store_true")
-parser.add_argument("--disable-limbo", help="Disable Limbo Repo",
-        action="store_true")
-parser.add_argument("--disable-main", help="Disable Main Repo",
-        action="store_true")
-parser.add_argument("--disable-weekly", help="Disable Weekly Repo",
-        action="store_true")
+    action="store_true")
+parser.add_argument("--e-limbo", help="Enable Limbo Repo",
+    action="store_true")
+parser.add_argument("--e-main", help="Enable Main Repo",
+    action="store_true")
+parser.add_argument("--e-weekly", help="Enable Weekly Repo",
+    action="store_true")
+parser.add_argument("--d-limbo", help="Disable Limbo Repo",
+    action="store_true")
+parser.add_argument("--d-main", help="Disable Main Repo",
+    action="store_true")
+parser.add_argument("--d-weekly", help="Disable Weekly Repo",
+    action="store_true")
+parser.add_argument("--i-enman", help="Install enman to manage \
+    Community Repos", action="store_true")
+parser.add_argument("--e-search", help="List Available Community \
+    Repos", action="store_true")
+
 args = parser.parse_args()
 
 if args.limbo:
@@ -82,49 +90,60 @@ elif args.status:
     status = subprocess.Popen('equo status', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.enable_limbo:
+elif args.e_limbo:
     print "Enabling Limbo Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayon-limbo', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.enable_main:
+elif args.e_main:
     print "Enabling Main Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayonlinux.org', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.enable_weekly:
+elif args.e_weekly:
     print "Enabling Weekly Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayon-weekly', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.disable_limbo:
+elif args.d_limbo:
     print "Disabling Limbo Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo disable \
     sabayon-limbo', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.disable_main:
+elif args.d_main:
     print "Disabling Main Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo disable \
     sabayonlinux.org', shell=True)
     retval = status.wait()
     sys.exit()
-elif args.disable_weekly:
+elif args.d_weekly:
     print "Disabling Weekly Repo"
     time.sleep(1)
     status = subprocess.Popen('equo repo disable \
     sabayon-weekly', shell=True)
     retval = status.wait()
     sys.exit()
-
+elif args.i_enman:
+    print "Installing enman"
+    time.sleep(1)
+    status = subprocess.Popen('equo install enman', shell=True)
+    retval = status.wait()
+    sys.exit()
+elif args.e_search:
+    print "Getting List of Community Repos"
+    time.sleep(1)
+    status = subprocess.Popen('enman search', shell=True)
+    retval = status.wait()
+    sys.exit()
 
 # Start Timer
 startTime = datetime.datetime.now()
@@ -198,4 +217,5 @@ ctime = datetime.datetime.now() - startTime
 print "Time to Complete ", ctime
 
 
+print " \n"
 print " \n"
