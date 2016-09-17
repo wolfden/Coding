@@ -31,9 +31,8 @@ wget -P "$HOME/.fonts/" https://github.com/Lokaltog/powerline/raw/develop/font/P
 fc-cache -vf "$HOME/.fonts"
 wget -P "$HOME/.config/fontconfig/conf.d/" https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 
-
+# cp vimrc to .vim/vimrc
 # vim - PluginInstall
 # cd ~/.vim/bundle/YouCompleteMe
 # ./install.py
-# replace .vimrc
 # vim - :h 'laststatus'
