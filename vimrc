@@ -76,13 +76,10 @@ set nu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> vim-airline settings <<
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline
 set noshowmode " Hide the default mode text
-
+let g:airline_powerline_fonts = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Auto-complete customization <<
