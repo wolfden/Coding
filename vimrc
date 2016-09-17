@@ -33,9 +33,11 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
 Plugin 'nanotech/jellybeans.vim'
-
+Bundle 'ervandew/supertab'                                                      
+Bundle 'SirVer/ultisnips'
+ 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> All Plugins Above Here <<
@@ -72,7 +74,7 @@ set nu
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Powerline <<
+" >> vim-airline settings <<
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -87,6 +89,15 @@ set noshowmode " Hide the default mode text
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']                      
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']                      
+let g:SuperTabDefaultCompletionType = '<C-n>'                                   
+                                                                                
+" better key bindings for UltiSnipsExpandTrigger                                
+let g:UltiSnipsExpandTrigger = "<tab>"                                          
+let g:UltiSnipsJumpForwardTrigger = "<tab>"                                     
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>" 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
