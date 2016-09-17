@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# setup zsh vim and prezto
+
+sudo apt-get install -y git zsh vim python-dev python3-dev build-essential cmake python-pymc python-pip pyuv bzr mercurial socat
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+shopt -s extglob
+for rcfile in $HOME/.zprezto/runcoms/!(README.md); do
+    ln -s "$rcfile" "$HOME/.$(basename $rcfile)"
+done
+
+# switch to zsh
+sudo usermod -s /bin/zsh "$(whoami)"
+
+# symlink vimrc
+ln -s "$HOME/.vim/vimrc" "$HOME/.vimrc"
+
+# pip powerline alternative to use plugin vim-airline/vim-airline
+sudo pip install powerline-status
+
+# for undo
+mkdir -p "$HOME/.vim/undo/"
+
+# powerline fonts
+mkdir -p "$HOME/.fonts/" "$HOME/.config/fontconfig/conf.d/"
+wget -P "$HOME/.fonts/" https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+fc-cache -vf "$HOME/.fonts"
+wget -P "$HOME/.config/fontconfig/conf.d/" https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+
+
+# vim - PluginInstall
+# cd ~/.vim/bundle/YouCompleteMe
+# ./install.py
+# replace .vimrc
+# vim - :h 'laststatus'

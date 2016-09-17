@@ -13,7 +13,6 @@ import sys
 import time
 import os
 
-
 # Add some pretty colors
 class Bcolors:
     def __init__(self):
@@ -35,7 +34,7 @@ if euid != 0:
     time.sleep(1)
     args = ['sudo', sys.executable] + sys.argv + [os.environ]
     os.execlpe('sudo', *args)
-    
+
 # Arguments optimize mirrors run_update
 # [--limbo] [--main] [--weekly] [--status]
 parser = argparse.ArgumentParser()
@@ -190,7 +189,6 @@ equo_clean = subprocess.check_call('equo cleanup', shell=True)
 print " \n"
 print "========================System Information========================"
 
-
 # Gather Useful Information and Display it in Terminal
 cpu = subprocess.check_call('uname -p', shell=True)
 kernel_arch = subprocess.check_call('uname -m', shell=True)
@@ -215,7 +213,6 @@ date_end = subprocess.Popen('date', shell=False)
 # End Timer
 ctime = datetime.datetime.now() - startTime
 print "Time to Complete ", ctime
-
 
 print " \n"
 print " \n"
