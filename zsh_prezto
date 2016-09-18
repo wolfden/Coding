@@ -32,7 +32,7 @@ fc-cache -vf "$HOME/.fonts"
 wget -P "$HOME/.config/fontconfig/conf.d/" https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 
 # cp vimrc to .vim/vimrc
-wget -P "$HOME/.vim/vimrc" https://raw.githubusercontent.com/wolfden/Coding/master/vimrc
+wget -P "$HOME/.vim/" https://raw.githubusercontent.com/wolfden/Coding/master/vimrc
 
 # vim - :PluginInstall
 # cd ~/.vim/bundle/YouCompleteMe
