@@ -2,7 +2,7 @@
 
 # setup zsh vim and prezto
 
-sudo apt-get install -y git zsh vim python-dev python3-dev build-essential cmake python-pymc python-pip pyuv bzr mercurial socat
+sudo apt-get install -y git zsh vim python-dev python3-dev build-essential cmake python-pymc python-pip bzr mercurial socat
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -23,7 +23,7 @@ ln -s "$HOME/.vim/vimrc" "$HOME/.vimrc"
 mkdir -p "$HOME/.vim/undo/"
 
 #for flake8
-sudo pop install flake8
+sudo pip install flake8
 
 # powerline fonts to use with vim-airline
 mkdir -p "$HOME/.fonts/" "$HOME/.config/fontconfig/conf.d/"
