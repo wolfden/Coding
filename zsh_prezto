@@ -2,7 +2,11 @@
 
 # setup zsh vim and prezto
 
-sudo apt-get install -y git zsh vim python-dev python3-dev build-essential cmake python-pymc python-pip bzr mercurial socat
+# ubuntu 16.04 is python 3
+
+sudo apt-get install -y git zsh vim vim-gnome-py2 flake8 python-dev python3-dev build-essential cmake python-pymc python-pip bzr mercurial socat
+
+# check make sure python  sudo update-alternatives --config vim
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -21,9 +25,6 @@ ln -s "$HOME/.vim/vimrc" "$HOME/.vimrc"
 
 # for undo
 mkdir -p "$HOME/.vim/undo/"
-
-#for flake8
-sudo pip install flake8
 
 # powerline fonts to use with vim-airline
 mkdir -p "$HOME/.fonts/" "$HOME/.config/fontconfig/conf.d/"
