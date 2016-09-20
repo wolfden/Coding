@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo equo install app-shells/zsh app-shells/zsh-completions
+
+# as user
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+shopt -s extglob
+for rcfile in $HOME/.zprezto/runcoms/!(README.md); do
+    ln -s "$rcfile" "$HOME/.$(basename $rcfile)"
+done
+
+chsh -s /bin/zsh
