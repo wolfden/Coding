@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# install following for zsh vim python setup
+sudo equo install app-shells/zsh app-shells/zsh-completions dev-vcs/git app-editors/vim dev-python/pip dev-vcs/bzr dev-vcs/mercurial net-misc/socat dev-util/cmake sys-devel/gcc sys-devel/base-gcc
+
+# as user
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+shopt -s extglob
+for rcfile in $HOME/.zprezto/runcoms/!(README.md); do
+    ln -s "$rcfile" "$HOME/.$(basename $rcfile)"
+done
+
+chsh -s /bin/zsh
+
+# open new terminal and enjoy :)
+
+# Next we setup vim
+
+# Get Vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Symlink
+ln -s "$HOME/.vim/vimrc" "$HOME/.vimrc"
+
+# for undo
+mkdir -p "$HOME/.vim/undo/"
+
+# Powerline fonts to use with vim-airline
+mkdir -p "$HOME/.fonts/" "$HOME/.config/fontconfig/conf.d/"
+wget -P "$HOME/.fonts/" https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+fc-cache -vf "$HOME/.fonts"
+wget -P "$HOME/.config/fontconfig/conf.d/" https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+
+# Get my vimrc file
+wget -P "$HOME/.vim/" https://raw.githubusercontent.com/wolfden/Coding/master/bash/vimrc
+
+# Start vim - :PluginInstall
+# Setup Autocomplete - cd ~/.vim/bundle/YouCompleteMe
+# ./install.py
+
+# if above fails for VPS:
+# dd if=/dev/zero of=/var/swap.img bs=1024k count=1000
+# sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+# sudo /sbin/mkswap /var/swap.1
+# sudo chmod 600 /var/swap.1
+# YCM_CORES=1 ./install.py
