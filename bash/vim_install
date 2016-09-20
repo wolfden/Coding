@@ -19,7 +19,7 @@ fc-cache -vf "$HOME/.fonts"
 wget -P "$HOME/.config/fontconfig/conf.d/" https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 
 # Get my vimrc file
-wget -P "$HOME/.vim/" https://raw.githubusercontent.com/wolfden/Coding/master/vimrc
+wget -P "$HOME/.vim/" https://raw.githubusercontent.com/wolfden/Coding/master/bash/vimrc
 
 # Start vim - :PluginInstall
 # Setup Autocomplete - cd ~/.vim/bundle/YouCompleteMe
