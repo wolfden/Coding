@@ -19,7 +19,7 @@ smpath = "/sabayon/iso/monthly/"
 smstab = "/sabayon/stable/"
 
 # Directory of stored ISOs -- Edit to fit your setup
-isos = "/home/"
+isos = "/home"
 
 # Dev ISOs
 dvkde = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso"
@@ -154,13 +154,13 @@ sssource = smirror + smstab + sspinbase
 ssvsource = smirror + smstab + sserver
 
 # Stable md5 - edit version number to current one, otherwise it will fail
-skdemd5 = "/stable/Sabayon_Linux_16.11_amd64_KDE.iso.md5"
-sgnomemd5 = "/stable/Sabayon_Linux_16.11_amd64_GNOME.iso.md5"
-smatemd5 = "/stable/Sabayon_Linux_16.11_amd64_MATE.iso.md5"
-sxfcemd5 = "/stable/Sabayon_Linux_16.11_amd64_Xfce.iso.md5"
-sminimalmd5 = "/stable/Sabayon_Linux_16.11_amd64_Minimal.iso.md5"
-sspinbasemd5 = "/stable/Sabayon_Linux_16.11_amd64_SpinBase.iso.md5"
-sservermd5 = "/stable/Sabayon_Linux_16.11_amd64_Server.iso.md5"
+skdemd5 = "/Sabayon_Linux_16.11_amd64_KDE.iso.md5"
+sgnomemd5 = "/Sabayon_Linux_16.11_amd64_GNOME.iso.md5"
+smatemd5 = "/Sabayon_Linux_16.11_amd64_MATE.iso.md5"
+sxfcemd5 = "/Sabayon_Linux_16.11_amd64_Xfce.iso.md5"
+sminimalmd5 = "/Sabayon_Linux_16.11_amd64_Minimal.iso.md5"
+sspinbasemd5 = "/Sabayon_Linux_16.11_amd64_SpinBase.iso.md5"
+sservermd5 = "/Sabayon_Linux_16.11_amd64_Server.iso.md5"
 
 # Stable md5 sources
 sksourcemd5 = smirror + smstab + skdemd5
@@ -172,13 +172,13 @@ sssourcemd5 = smirror + smstab + sspinbasemd5
 ssvsourcemd5 = smirror + smstab + sservermd5
 
 # Stable pkglist - edit version number to current one, otherwise it will fail
-skdepkglist = "/stable/Sabayon_Linux_16.11_amd64_KDE.iso.pkglist"
-sgnomepkglist = "/stable/Sabayon_Linux_16.11_amd64_GNOME.iso.pkglist"
-smatepkglist = "/stable/Sabayon_Linux_16.11_amd64_MATE.iso.pkglist"
-sxfcepkglist = "/stable/Sabayon_Linux_16.11_amd64_Xfce.iso.pkglist"
-sminimalpkglist = "/stable/Sabayon_Linux_16.11_amd64_Minimal.iso.pkglist"
-sspinbasepkglist = "/stable/Sabayon_Linux_16.11_amd64_SpinBase.iso.pkglist"
-sserverbasepkglist = "/stable/Sabayon_Linux_16.11_amd64_Server.iso.pkglist"
+skdepkglist = "/Sabayon_Linux_16.11_amd64_KDE.iso.pkglist"
+sgnomepkglist = "/Sabayon_Linux_16.11_amd64_GNOME.iso.pkglist"
+smatepkglist = "/Sabayon_Linux_16.11_amd64_MATE.iso.pkglist"
+sxfcepkglist = "/Sabayon_Linux_16.11_amd64_Xfce.iso.pkglist"
+sminimalpkglist = "/Sabayon_Linux_16.11_amd64_Minimal.iso.pkglist"
+sspinbasepkglist = "/Sabayon_Linux_16.11_amd64_SpinBase.iso.pkglist"
+sserverbasepkglist = "/Sabayon_Linux_16.11_amd64_Server.iso.pkglist"
 
 # Stable pkglist sources
 sksourcepkglist = smirror + smstab + skdepkglist
