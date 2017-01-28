@@ -16,6 +16,7 @@ mpath = "/sabayon/iso/daily/"
 # Change monthly mirror url to your favorite mirror
 smirror = "rsync://rsync.belnet.be"
 smpath = "/sabayon/iso/monthly/"
+smstab = "/sabayon/stable/"
 
 # Directory of stored ISOs -- Edit to fit your setup
 isos = "/home/"
@@ -144,49 +145,49 @@ sspinbase = "/Sabayon_Linux_16.11_amd64_SpinBase.iso"
 sserver = "/Sabayon_Linux_16.11_amd64_Server.iso"
 
 # Stable sources
-sksource = smirror + smpath + skde
-sgsource = smirror + smpath + sgnome
-smasource = smirror + smpath + smate
-sxsource = smirror + smpath + sxfce
-smsource = smirror + smpath + sminimal
-sssource = smirror + smpath + sspinbase
-ssvsource = smirror + smpath + sserver
+sksource = smirror + smstab + skde
+sgsource = smirror + smstab + sgnome
+smasource = smirror + smstab + smate
+sxsource = smirror + smstab + sxfce
+smsource = smirror + smstab + sminimal
+sssource = smirror + smstab + sspinbase
+ssvsource = smirror + smstab + sserver
 
 # Stable md5 - edit version number to current one, otherwise it will fail
-skdemd5 = "/Sabayon_Linux_16.11_amd64_KDE.iso.md5"
-sgnomemd5 = "/Sabayon_Linux_16.11_amd64_GNOME.iso.md5"
-smatemd5 = "/Sabayon_Linux_16.11_amd64_MATE.iso.md5"
-sxfcemd5 = "/Sabayon_Linux_16.11_amd64_Xfce.iso.md5"
-sminimalmd5 = "/Sabayon_Linux_16.11_amd64_Minimal.iso.md5"
-sspinbasemd5 = "/Sabayon_Linux_16.11_amd64_SpinBase.iso.md5"
-sservermd5 = "/Sabayon_Linux_16.11_amd64_Server.iso.md5"
+skdemd5 = "/stable/Sabayon_Linux_16.11_amd64_KDE.iso.md5"
+sgnomemd5 = "/stable/Sabayon_Linux_16.11_amd64_GNOME.iso.md5"
+smatemd5 = "/stable/Sabayon_Linux_16.11_amd64_MATE.iso.md5"
+sxfcemd5 = "/stable/Sabayon_Linux_16.11_amd64_Xfce.iso.md5"
+sminimalmd5 = "/stable/Sabayon_Linux_16.11_amd64_Minimal.iso.md5"
+sspinbasemd5 = "/stable/Sabayon_Linux_16.11_amd64_SpinBase.iso.md5"
+sservermd5 = "/stable/Sabayon_Linux_16.11_amd64_Server.iso.md5"
 
 # Stable md5 sources
-sksourcemd5 = smirror + smpath + skdemd5
-sgsourcemd5 = smirror + smpath + sgnomemd5
-smasourcemd5 = smirror + smpath + smatemd5
-sxsourcemd5 = smirror + smpath + sxfcemd5
-smsourcemd5 = smirror + smpath + sminimalmd5
-sssourcemd5 = smirror + smpath + sspinbasemd5
-ssvsourcemd5 = smirror + smpath + sservermd5
+sksourcemd5 = smirror + smstab + skdemd5
+sgsourcemd5 = smirror + smstab + sgnomemd5
+smasourcemd5 = smirror + smstab + smatemd5
+sxsourcemd5 = smirror + smstab + sxfcemd5
+smsourcemd5 = smirror + smstab + sminimalmd5
+sssourcemd5 = smirror + smstab + sspinbasemd5
+ssvsourcemd5 = smirror + smstab + sservermd5
 
 # Stable pkglist - edit version number to current one, otherwise it will fail
-skdepkglist = "/Sabayon_Linux_16.11_amd64_KDE.iso.pkglist"
-sgnomepkglist = "/Sabayon_Linux_16.11_amd64_GNOME.iso.pkglist"
-smatepkglist = "/Sabayon_Linux_16.11_amd64_MATE.iso.pkglist"
-sxfcepkglist = "/Sabayon_Linux_16.11_amd64_Xfce.iso.pkglist"
-sminimalpkglist = "/Sabayon_Linux_16.11_amd64_Minimal.iso.pkglist"
-sspinbasepkglist = "/Sabayon_Linux_16.11_amd64_SpinBase.iso.pkglist"
-sserverbasepkglist = "/Sabayon_Linux_16.11_amd64_Server.iso.pkglist"
+skdepkglist = "/stable/Sabayon_Linux_16.11_amd64_KDE.iso.pkglist"
+sgnomepkglist = "/stable/Sabayon_Linux_16.11_amd64_GNOME.iso.pkglist"
+smatepkglist = "/stable/Sabayon_Linux_16.11_amd64_MATE.iso.pkglist"
+sxfcepkglist = "/stable/Sabayon_Linux_16.11_amd64_Xfce.iso.pkglist"
+sminimalpkglist = "/stable/Sabayon_Linux_16.11_amd64_Minimal.iso.pkglist"
+sspinbasepkglist = "/stable/Sabayon_Linux_16.11_amd64_SpinBase.iso.pkglist"
+sserverbasepkglist = "/stable/Sabayon_Linux_16.11_amd64_Server.iso.pkglist"
 
 # Stable pkglist sources
-sksourcepkglist = smirror + smpath + skdepkglist
-sgsourcepkglist = smirror + smpath + sgnomepkglist
-smasourcepkglist = smirror + smpath + smatepkglist
-sxsourcepkglist = smirror + smpath + sxfcepkglist
-smsourcepkglist = smirror + smpath + sminimalpkglist
-sssourcepkglist = smirror + smpath + sspinbasepkglist
-ssvsourcepkglist = smirror + smpath + sspinbasepkglist
+sksourcepkglist = smirror + smstab + skdepkglist
+sgsourcepkglist = smirror + smstab + sgnomepkglist
+smasourcepkglist = smirror + smstab + smatepkglist
+sxsourcepkglist = smirror + smstab + sxfcepkglist
+smsourcepkglist = smirror + smstab + sminimalpkglist
+sssourcepkglist = smirror + smstab + sspinbasepkglist
+ssvsourcepkglist = smirror + smstab + sspinbasepkglist
 
 
 print "\nWelcome to the Sabayon Linux(tm) Syncmaster!"
