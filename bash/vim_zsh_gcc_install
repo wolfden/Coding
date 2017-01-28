@@ -7,9 +7,13 @@ sudo equo install app-shells/zsh app-shells/zsh-completions dev-vcs/git app-edit
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 shopt -s extglob
-for rcfile in $HOME/.zprezto/runcoms/!(README.md); do
-    ln -s "$rcfile" "$HOME/.$(basename $rcfile)"
-done
+
+ln -s $HOME/.zprezto/runcoms/zlogin $HOME/.zlogin         
+ln -s $HOME/.zprezto/runcoms/zlogout $HOME/.zlogout
+ln -s $HOME/.zprezto/runcoms/zpreztorc $HOME/.zpreztorc
+ln -s $HOME/.zprezto/runcoms/zprofile $HOME/.zprofile     
+ln -s $HOME/.zprezto/runcoms/zshenv $HOME/.zshenv
+ln -s $HOME/.zprezto/runcoms/zshrc $HOME/.zshrc
 
 chsh -s /bin/zsh
 
