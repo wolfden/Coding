@@ -2,7 +2,6 @@
 
 # rclone backup and sync by wolfden
 
-import datetime
 import subprocess
 import argparse
 import sys
@@ -22,12 +21,12 @@ if args.backup:
     time.sleep(1)
     backup = subprocess.Popen('rclone sync -v ~/gdrive remote:storage', shell=True)
     retval = backup.wait()
-    print "Backing up complete"
+    print "Back up completed"
     sys.exit()
 elif args.sync:
     print "Syncing from Google Drive"
     time.sleep(1)
     sync = subprocess.Popen('rclone sync -v remote:storage ~/gdrive', shell=True)
     retval = sync.wait()
-    print "Sync is complete"
+    print "Sync completed"
     sys.exit()
