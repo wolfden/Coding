@@ -1,0 +1,33 @@
+#!/usr/bin/python
+
+# rclone backup and sync by wolfden
+
+import datetime
+import subprocess
+import argparse
+import sys
+import time
+import os
+
+# Arguments
+# [--backup] [--sync] 
+parser = argparse.ArgumentParser()
+parser.add_argument("--backup", help="Backup to Google Drive", action="store_true")
+parser.add_argument("--sync", help="Sync from Google Drive", action="store_true")
+
+args = parser.parse_args()
+
+if args.backup:
+    print "Backing up to Google Drive"
+    time.sleep(1)
+    backup = subprocess.Popen('rclone sync -v ~/gdrive remote:storage', shell=True)
+    retval = backup.wait()
+    print "Backing up complete"
+    sys.exit()
+elif args.sync:
+    print "Syncing from Google Drive"
+    time.sleep(1)
+    sync = subprocess.Popen('rclone sync -v remote:storage ~/gdrive', shell=True)
+    retval = sync.wait()
+    print "Sync is complete"
+    sys.exit()
