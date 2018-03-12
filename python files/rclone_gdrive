@@ -39,7 +39,6 @@ print("* Type remote for choice to setup during rclone config setup")
 print("* Beaware running backup or sync will delete files if not present")
 print("*****************************************************************")
 print("\n")
-print("\nEnter Your Choice Below")
 # Menu with choice, user will enter a number for desire choice
 ans = True
 while ans:
