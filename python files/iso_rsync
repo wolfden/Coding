@@ -381,4 +381,4 @@ while ans:
         print("Thanks for using Sabayon Linux(tm) Syncmaster")
         sys.exit()
     elif ans != "":
-        print("rsync complete")
+        print("Try Again, Unknown")
