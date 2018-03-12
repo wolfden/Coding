@@ -30,7 +30,7 @@ class Bcolors:
 ###root check, sudo if not to keep going
 euid = os.geteuid()
 if euid != 0:
-    print "User not root..." '\n' "Running sudo to Continue...." '\n'
+    print("User not root..." '\n' "Running sudo to Continue...." '\n')
     time.sleep(1)
     args = ['sudo', sys.executable] + sys.argv + [os.environ]
     os.execlpe('sudo', *args)
@@ -64,81 +64,81 @@ parser.add_argument("--e-search", help="List Available Community \
 args = parser.parse_args()
 
 if args.limbo:
-    print "Starting to Optimize Limbo Repo"
+    print("Starting to Optimize Limbo Repo")
     time.sleep(1)
     limbo = subprocess.Popen('equo repo mirrorsort sabayon-limbo', shell=True)
     retval = limbo.wait()
     sys.exit()
 elif args.main:
-    print "Starting to Optimize Main Repo"
+    print("Starting to Optimize Main Repo")
     time.sleep(1)
     main = subprocess.Popen('equo repo mirrorsort \
     sabayonlinux.org', shell=True)
     retval = main.wait()
     sys.exit()
 elif args.weekly:
-    print "Starting to Optimize Weekly Repo"
+    print("Starting to Optimize Weekly Repo")
     time.sleep(1)
     weekly = subprocess.Popen('equo repo mirrorsort \
     sabayon-weekly', shell=True)
     retval = weekly.wait()
     sys.exit()
 elif args.status:
-    print "Getting Repositories Status"
+    print("Getting Repositories Status")
     time.sleep(1)
     status = subprocess.Popen('equo status', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.e_limbo:
-    print "Enabling Limbo Repo"
+    print("Enabling Limbo Repo")
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayon-limbo', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.e_main:
-    print "Enabling Main Repo"
+    print("Enabling Main Repo")
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayonlinux.org', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.e_weekly:
-    print "Enabling Weekly Repo"
+    print("Enabling Weekly Repo")
     time.sleep(1)
     status = subprocess.Popen('equo repo enable \
     sabayon-weekly', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.d_limbo:
-    print "Disabling Limbo Repo"
+    print("Disabling Limbo Repo")
     time.sleep(1)
     status = subprocess.Popen('equo repo disable \
     sabayon-limbo', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.d_main:
-    print "Disabling Main Repo"
+    print("Disabling Main Repo")
     time.sleep(1)
     status = subprocess.Popen('equo repo disable \
     sabayonlinux.org', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.d_weekly:
-    print "Disabling Weekly Repo"
+    print("Disabling Weekly Repo")
     time.sleep(1)
     status = subprocess.Popen('equo repo disable \
     sabayon-weekly', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.i_enman:
-    print "Installing enman"
+    print("Installing enman")
     time.sleep(1)
     status = subprocess.Popen('equo install enman', shell=True)
     retval = status.wait()
     sys.exit()
 elif args.e_search:
-    print "Getting List of Community Repos"
+    print("Getting List of Community Repos")
     time.sleep(1)
     status = subprocess.Popen('enman search', shell=True)
     retval = status.wait()
@@ -151,43 +151,43 @@ date_start = subprocess.Popen('date', shell=False)
 retval = date_start.wait()
 
 # Lets See What Repos We Are Using
-print Bcolors.BOLD + "====Current Activated Repositories====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Current Activated Repositories====" + Bcolors.ENDC)
 equo_repo = subprocess.check_call("equo repo list", shell=True)
 
 # First we need to update or make sure our Repositories are Current
-print Bcolors.BOLD + "====Updating the Repositories====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Updating the Repositories====" + Bcolors.ENDC)
 equo_update = subprocess.check_call('equo update', shell=True)
 
 # Syncing license.accept so we don't get prompted for license agreement
-print Bcolors.BOLD + "====Updating license.accept file====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Updating license.accept file====" + Bcolors.ENDC)
 rsync = subprocess.check_call('rsync -av -H -A -X --delete-during \
     "rsync://rsync.at.gentoo.org/gentoo-portage/licenses/" \
     "/usr/portage/licenses/"; ls /usr/portage/licenses -1 | \
     xargs -0 > /etc/entropy/packages/license.accept', shell=True)
 
 # Next we need to make sure latest entropy is installed
-print Bcolors.BOLD + "====Installing Latest Entropy====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Installing Latest Entropy====" + Bcolors.ENDC)
 equo_entropy = subprocess.check_call('equo install app-admin/equo \
     sys-apps/entropy --nodeps', shell=True)
 
 # Next we list number of upgrades available
-print Bcolors.BOLD + "====Getting A Count on Packages====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Getting A Count on Packages====" + Bcolors.ENDC)
 equo_upgrades_available = subprocess.check_call('equo q updates', shell=True)
 
 # Next we start the upgrade process
-print Bcolors.BOLD + "====Starting to Perform Upgrade====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Starting to Perform Upgrade====" + Bcolors.ENDC)
 equo_upgrade = subprocess.check_call('equo upgrade', shell=True)
 
 # Next we check for missing dependencies
-print Bcolors.BOLD + "====Looking for Missing Dependencies====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Looking for Missing Dependencies====" + Bcolors.ENDC)
 equo_dep = subprocess.check_call('equo deptest', shell=True)
 
 # Next we clean up
-print Bcolors.BOLD + "====Running equo cleanup====" + Bcolors.ENDC
+print(Bcolors.BOLD + "====Running equo cleanup====" + Bcolors.ENDC)
 equo_clean = subprocess.check_call('equo cleanup', shell=True)
 
-print " \n"
-print "========================System Information========================"
+print(" \n")
+print ("========================System Information========================")
 
 # Gather Useful Information and Display it in Terminal
 cpu = subprocess.check_call('uname -p', shell=True)
@@ -196,23 +196,23 @@ release_version = subprocess.check_call('cat /etc/sabayon-release', shell=True)
 release_edition = subprocess.check_call('cat /etc/sabayon-edition', shell=True)
 kernel_version = subprocess.check_call('uname -r', shell=True)
 nodename = subprocess.check_call('uname -n', shell=True)
-print " \n"
-print "~~~Mem Free~~~"
+print(" \n")
+print("~~~Mem Free~~~")
 mem_free = subprocess.check_call('free -h', shell=True)
-print " \n"
-print "~~~Disk Space~~~"
+print(" \n")
+print("~~~Disk Space~~~")
 disk_space = subprocess.check_call('df -lT --exclude-type=tmpfs \
     --exclude-type=rootfs', shell=True)
 
-print " \n"
-print Bcolors.BOLD + "This Session Has Ended Successfully" + Bcolors.ENDC
+print(" \n")
+print(Bcolors.BOLD + "This Session Has Ended Successfully" + Bcolors.ENDC)
 
 # Date and Time of End
 date_end = subprocess.Popen('date', shell=False)
 
 # End Timer
 ctime = datetime.datetime.now() - startTime
-print "Time to Complete ", ctime
+print("Time to Complete ", ctime)
 
-print " \n"
-print " \n"
+print(" \n")
+print(" \n")
