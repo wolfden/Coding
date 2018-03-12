@@ -9,7 +9,7 @@ import time
 import os
 
 # Arguments
-# [--backup] [--sync] 
+# [--backup] [--sync]
 parser = argparse.ArgumentParser()
 parser.add_argument("--backup", help="Backup to Google Drive", action="store_true")
 parser.add_argument("--sync", help="Sync from Google Drive", action="store_true")
@@ -17,16 +17,59 @@ parser.add_argument("--sync", help="Sync from Google Drive", action="store_true"
 args = parser.parse_args()
 
 if args.backup:
-    print "Backing up to Google Drive"
+    print("Backing up to Google Drive")
     time.sleep(1)
     backup = subprocess.Popen('rclone sync -v ~/gdrive remote:storage', shell=True)
     retval = backup.wait()
-    print "Back up completed"
+    print("Back up completed")
     sys.exit()
 elif args.sync:
-    print "Syncing from Google Drive"
+    print("Syncing from Google Drive")
     time.sleep(1)
     sync = subprocess.Popen('rclone sync -v remote:storage ~/gdrive', shell=True)
     retval = sync.wait()
-    print "Sync completed"
+    print("Sync completed")
     sys.exit()
+
+print("*****************************************************************")
+print("*****************************************************************")
+print("* Make sure you have install rclone")
+print("* Make sure you have ran the command rclone config")
+print("* Type remote for choice to setup during rclone config setup")
+print("* Beaware running backup or sync will delete files if not present")
+print("*****************************************************************")
+print("\n")
+print("\nEnter Your Choice Below")
+# Menu with choice, user will enter a number for desire choice
+ans = True
+while ans:
+    print ("""
+    I want to
+        1.Back-up local to Google Drive
+        2.Sync from my Google Drive
+        3.Exit
+        
+    """)
+# All the rsync stuffs via menu selection
+    ans = input("Enter Number From Above: ")
+
+    if ans == "1":
+        print("Starting Back-up ...")
+        time.sleep(1)
+        backup = subprocess.Popen('rclone sync -v ~/gdrive remote:storage', shell=True)
+        retval = backup.wait()
+        print("Back up completed")
+        sys.exit()
+    elif ans == "2":
+        print("Syncing from Google Drive")
+        time.sleep(1)
+        sync = subprocess.Popen('rclone sync -v remote:storage ~/gdrive', shell=True)
+        retval = sync.wait()
+        print("Sync completed")
+        sys.exit()
+    elif ans == "3":
+        print("")
+        sys.exit()
+    elif ans != "":
+        print("*********")
+        print("Try Again")
