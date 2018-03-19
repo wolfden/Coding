@@ -10,7 +10,7 @@ import sys
 
 
 # Notice to run as root or changes will fail
-print "\nScript for cpupower. To Makes Changes Must Be Root\n"
+print ("\nScript for cpupower. To Makes Changes Must Be Root\n")
 
 # time for the menu
 ans = True
@@ -30,74 +30,74 @@ while ans:
     11.Edit the config file - set governor on boot
     12.Exit
     """)
-    ans = raw_input("Enter Number From Above:")
+    ans = input("Enter Number From Above:")
 
     if ans == "0":
-        print "Installing cpupower"
+        print ("Installing cpupower")
         install = subprocess.Popen('equo install cpupower', shell=True)
         retval = install.wait()
     elif ans == "1":
-        print "CPU info"
+        print ("CPU info")
         time.sleep(1)
         info = subprocess.Popen('cpupower frequency-info', shell=True)
         retval = info.wait()
     elif ans == "2":
-        print "Displaying CPU idle info"
+        print ("Displaying CPU idle info")
         time.sleep(2)
         idleinfo = subprocess.Popen('cpupower idle-info', shell=True)
         retval = idleinfo.wait()
     elif ans == "3":
-        print "Setting Governor to ondemand"
+        print ("Setting Governor to ondemand")
         time.sleep(1)
         ondemand = subprocess.Popen('cpupower frequency-set \
                                     -g ondemand', shell=True)
         retval = ondemand.wait()
     elif ans == "4":
-        print "Setting Governor to performance"
+        print ("Setting Governor to performance")
         time.sleep(1)
         performance = subprocess.Popen('cpupower frequency-set \
                                        -g performance', shell=True)
         retval = performance.wait()
     elif ans == "5":
-        print "Setting Governor to conservative"
+        print ("Setting Governor to conservative")
         time.sleep(1)
         conservative = subprocess.Popen('cpupower frequency-set -g \
                                         conservative', shell=True)
         retval = conservative.wait()
     elif ans == "6":
-        print "Setting Governor to powersave"
+        print ("Setting Governor to powersave")
         time.sleep(1)
         powersave = subprocess.Popen('cpupower frequency-set -g \
                                      powersave', shell=True)
         retval = powersave.wait()
     elif ans == "7":
-        print "Setting Governor to userspace"
+        print ("Setting Governor to userspace")
         time.sleep(1)
         userspace = subprocess.Popen('cpupower frequency-set -g \
                                      userspace', shell=True)
         retval = userspace.wait()
     elif ans == "8":
-        print "Enabling cpupower.service"
+        print ("Enabling cpupower.service")
         time.sleep(1)
         enable = subprocess.Popen('systemctl enable \
                                   cpupower.service', shell=True)
         retval = enable.wait()
     elif ans == "9":
-        print "Starting cpupower.service"
+        print ("Starting cpupower.service")
         time.sleep(1)
         start = subprocess.Popen('systemctl start \
                                  cpupower.service', shell=True)
         retval = start.wait()
     elif ans == "10":
-        print "Starting Live CPU monitoring"
+        print ("Starting Live CPU monitoring")
         time.sleep(2)
         monitor = subprocess.Popen('watch grep \"cpu MHz\" /proc/cpuinfo',
                                    shell=True)
     elif ans == "11":
-        print "Opening file now..	"
+        print ("Opening file now..	")
         p = subprocess.Popen('nano /etc/sysconfig/cpupower', shell=True)
         returncode = p.wait()
     elif ans == "12":
         sys.exit()
     elif ans != "":
-        print "Unknown Option"
+        print ("Unknown Option")
