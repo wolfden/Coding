@@ -19,7 +19,7 @@ smpath = "/sabayon/iso/monthly/"
 smstab = "/sabayon/stable/"
 
 # Directory of stored ISOs -- Edit to fit your setup
-isos = "/home"
+isos = "/media/sf_Downloads/iso"
 
 # Dev ISOs
 dvkde = "/Sabayon_Linux_DAILY_amd64_KDE-dev.iso"
@@ -236,57 +236,49 @@ while ans:
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvksource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvksourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvksourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvksourcepkglist, isos])
         print ("rsync complete")
     elif ans == "1":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvgsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvgsourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvgsourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvgsourcepkglist, isos])
         print ("rsync complete")
     elif ans == "2":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvmasource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvmasourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvmasourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvmasourcepkglist, isos])
         print ("rsync complete")
     elif ans == "3":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvxsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvxsourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvxsourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvxsourcepkglist, isos])
         print ("rsync complete")
     elif ans == "4":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvmsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvmsourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvmsourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvmsourcepkglist, isos])
         print ("rsync complete")
     elif ans == "5":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvssource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvssourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvssourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvssourcepkglist, isos])
         print ("rsync complete")
     elif ans == "6":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dvsvsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dvsvsourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dvsvsourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dvsvsourcepkglist, isos])
         print ("rsync complete")
     elif ans == "7":
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dksource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dkmd5source, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dkpkglistsource, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dkpkglistsource, isos])
         print ("rsync complete")
     elif ans == "8":
         print ("Starting rsync ...")
@@ -298,8 +290,7 @@ while ans:
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dmasource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dmamd5source, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dmapkglistsource, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dmapkglistsource, isos])
         print ("rsync complete")
     elif ans == "10":
         print ("Starting rsync ...")
@@ -322,8 +313,7 @@ while ans:
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', dsvsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', dsvmd5source, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', dsvpkglistsource, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', dsvpkglistsource, isos])
         print ("rsync complete")
     elif ans == "14":
         print ("Starting rsync ...")
@@ -341,8 +331,7 @@ while ans:
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', smasource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', smasourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', smasourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', smasourcepkglist, isos])
         print ("rsync complete")
     elif ans == "17":
         print ("Starting rsync ...")
@@ -354,8 +343,7 @@ while ans:
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', smsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', smsourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', smsourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', smsourcepkglist, isos])
         print ("rsync complete")
     elif ans == "19":
         print ("Starting rsync ...")
@@ -367,8 +355,7 @@ while ans:
         print ("Starting rsync ...")
         subprocess.call(['rsync', '-zvr', '--progress', ssvsource, isos])
         subprocess.call(['rsync', '-zvr', '--progress', ssvsourcemd5, isos])
-        subprocess.call(['rsync', '-zvr',
-                         '--progress', ssvsourcepkglist, isos])
+        subprocess.call(['rsync', '-zvr', '--progress', ssvsourcepkglist, isos])
         print ("rsync complete")
     elif ans == "21":
         print ("Starting rsync ...")
