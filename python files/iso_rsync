@@ -10,13 +10,13 @@ import subprocess
 import sys
 
 # Change daily mirror url to your favorite mirror
-mirror = "rsync://rsync.belnet.be"
-mpath = "/sabayon/iso/daily/"
+mirror = "rsync://na.mirror.garr.it/sabayonlinux"
+mpath = "/iso/daily/"
 
 # Change monthly mirror url to your favorite mirror
-smirror = "rsync://rsync.belnet.be"
-smpath = "/sabayon/iso/monthly/"
-smstab = "/sabayon/stable/"
+smirror = "rsync://na.mirror.garr.it/sabayonlinux"
+smpath = "/iso/monthly/"
+smstab = "/stable/"
 
 # Directory of stored ISOs -- Edit to fit your setup
 isos = "/media/sf_Downloads/iso"
