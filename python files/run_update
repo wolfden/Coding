@@ -140,7 +140,7 @@ elif args.i_enman:
 elif args.e_search:
     print("Getting List of Community Repos")
     time.sleep(1)
-    status = subprocess.Popen('enman search', shell=True)
+    status = subprocess.Popen('enman list -A', shell=True)
     retval = status.wait()
     sys.exit()
 
