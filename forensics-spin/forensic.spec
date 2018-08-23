@@ -38,13 +38,13 @@ outer_chroot_script_after: /home/gru/spin/remaster_post.sh
 extra_mkisofs_parameters: -b isolinux/isolinux.bin -c isolinux/boot.cat
 
 # Pre-ISO building script. Hook to be able to copy kernel images in place, for example
-pre_iso_script: /home/gru/spin/pre_iso_script.sh
+pre_iso_script: /home/gru/Git/Coding/forensics-spin/pre_iso_script.sh
 
 # Destination directory for the ISO image path (MANDATORY)
 destination_iso_directory: /home/gru/iso/final
 
 # Output iso image title
-iso_title: Sabayon Forensic Spin
+iso_title: Sabayon Forensics Spin
 
 # Alternative ISO file mount command (default is: mount -o loop -t iso9660)
 # iso_mounter:
