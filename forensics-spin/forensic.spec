@@ -20,7 +20,7 @@ source_iso: /home/gru/iso/source/Sabayon_Linux_DAILY_amd64_GNOME-dev.iso
 
 # Outer chroot script command, to be executed outside destination chroot before
 # before entering it (and before inner_chroot_script)
-outer_chroot_script: /home/gru/spin/remaster_pre.sh
+outer_chroot_script: /home/gru/Git/Coding/forensics-spin/remaster_pre.sh
 
 # Inner chroot script command, to be executed inside destination chroot before packing it
 # - kmerge.sh - setup kernel bins
@@ -28,11 +28,11 @@ outer_chroot_script: /home/gru/spin/remaster_pre.sh
 
 # Inner chroot script command, to be executed inside destination chroot after
 # packages installation and removal
-inner_chroot_script_after: /home/gru/spin/inner_chroot_script_after.sh
+inner_chroot_script_after: /home/gru/Git/Coding/forensics-spin/inner_chroot_script_after.sh
 
 # Outer chroot script command, to be executed outside destination chroot before
 # before entering it (and AFTER inner_chroot_script)
-outer_chroot_script_after: /home/gru/spin/remaster_post.sh
+outer_chroot_script_after: /home/gru/Git/Coding/forensics-spin/remaster_post.sh
 
 # Extra mkisofs parameters, perhaps something to include/use your bootloader
 extra_mkisofs_parameters: -b isolinux/isolinux.bin -c isolinux/boot.cat
