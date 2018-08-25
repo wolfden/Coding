@@ -7,6 +7,9 @@ show-weekdate=true
 [org.gnome.desktop.background]
 picture-uri='file:///usr/share/backgrounds/sabayon-forensic.png'
 
+[org.gnome.desktop.screensaver]
+picture-uri='file:///usr/share/backgrounds/lock-screen.jpg'
+
 [org.gnome.desktop.interface]
 icon-theme='Obsidian-Purple'
 gtk-theme="Qogir-dark"
@@ -33,6 +36,9 @@ default-zoom-level='small'
 natural-scroll=false
 scroll-method='two-finger-scrolling'
 tap-to-click=true
+
+[org.gnome.desktop.wm.preferences]
+button-layout=':minimize,maximize,close'
 
 [org.gnome.shell]
 enabled-extensions=['dash-to-dock@micxgx.gmail.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com']

@@ -24,7 +24,7 @@ outer_chroot_script: /home/gru/Git/Coding/forensics-spin/remaster_pre.sh
 
 # Inner chroot script command, to be executed inside destination chroot before packing it
 # - kmerge.sh - setup kernel bins
-#  inner_chroot_script:
+# inner_chroot_script: /home/gru/Git/Coding/forensics-spin/inner_chroot_script.sh
 
 # Inner chroot script command, to be executed inside destination chroot after
 # packages installation and removal
@@ -65,7 +65,9 @@ packages_to_remove:
 		dev-python/wxpython,
 		media-video/pitivi
 		games-action/minetest,
-		dev-python/wxpython
+		dev-python/wxpython,
+		x11-themes/sabayon-artwork-plymouth-default-17
+
 
 # Custom shell call to packages removal (default is: equo remove)
 # custom_packages_remove_cmd:
