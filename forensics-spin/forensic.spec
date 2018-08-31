@@ -66,6 +66,8 @@ packages_to_remove:
 		media-video/pitivi
 		games-action/minetest,
 		dev-python/wxpython,
+		x11-themes/iottinka-artwork,
+		x11-themes/sabayon-artwork-plymouth-base-14,
 		x11-themes/sabayon-artwork-plymouth-default-17
 
 
